@@ -1,55 +1,26 @@
 import Api from '../../../system/Api';
 import Service from '../../../system/Service';
 
-export const login = (dispatch, profile, provider = "local") => {
+export const login = (dispatch, profile) => {
 
-  const params = {
-    email: profile.email       || '',
-    authId: profile.authId     || profile.id || '',
-    password: profile.password,
-    provider: profile.provider || provider,
-  };
 
-  Api.post('/api/auth/login', params).then((response) => {
-
-    if (response.user) {
-
-    }
+  Api
+    .sendPost('api/authenticate', profile)
+    .then((response) => {
 
     dispatch(UserActions.login(response));
-    setTimeout(() => { dispatch(CatalogActions.render()); }, 500);
   });
 };
 
-export const signUp = (dispatch, profile, provider = "local") => {
+export const signUp = (dispatch, profile) => {
 
   dispatch(UserActions.init());
 
-  if (profile.name) {
-    const name = profile.name.split(" ");
-    profile.firstName = name[0];
-    profile.lastName = name[1];
+  if (profile.password === '') {
+    return dispatch(UserActions.fillPassword(profile));
   }
 
-  if (profile.picture) {
-    profile.image = profile.picture.data.url;
-  }
-
-  const params = {
-    authId:    profile.authId    || profile.id || '',
-    email:     profile.email     || '',
-    firstName: profile.firstName || '',
-    lastName:  profile.lastName  || '',
-    image:     profile.image     || '',
-    provider:  profile.provider  || provider,
-    password:  profile.password  || '',
-  };
-
-  if (params.password === '') {
-    return dispatch(UserActions.fillPassword(params));
-  }
-
-  Api.post('/api/user', params).then((response) => {
+  Api.sendPost('api/users', profile).then((response) => {
     dispatch(UserActions.signup(response));
   });
 

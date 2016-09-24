@@ -85,26 +85,50 @@ class SignupForm extends Component {
                   : null
               }
             </div>
-            <div className="row column">
-              <Input
-                name="email"
-                type="text"
-                value={email}
-                disabled={emailFieldDisabled}
-                placeholder="Email"
-                validations="isEmail"
-                validationError="This is not a valid email"
-                required
-              />
+            <div className="row">
+              <div className="medium-12 column">
+                <Input
+                  name="firstName"
+                  type="text"
+                  placeholder="Ваше имя"
+                  required
+                />
+              </div>
+              <div className="medium-12 column">
+                <Input
+                  name="lastName"
+                  type="text"
+                  placeholder="Фамилия"
+                  required
+                />
+              </div>
+            </div>
+            <div className="row">
+              <div className="medium-12 column">
+                <Input
+                  name="login"
+                  type="text"
+                  placeholder="Придумайте ваш логин"
+                  required
+                />
+              </div>
+              <div className="medium-12 column">
+                <Input
+                  name="email"
+                  type="text"
+                  placeholder="Ваш email"
+                  required
+                />
+              </div>
             </div>
             <div className="row column">
               <Input
                 name="password"
                 type="password"
                 value={password}
-                placeholder="Password"
+                placeholder="Придумате пароль"
                 validations="minLength:6"
-                validationError="Password should be min 6 characters"
+                validationError="Минимальная длина пароля 6 символов"
                 required
               />
             </div>

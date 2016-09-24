@@ -65,10 +65,10 @@ class LoginForm extends Component {
               }
             </div>
             <div className="row column">
-              <Input name="email" value={email} placeholder="Email" validations="isEmail" validationError="This is not a valid email" required />
+              <Input name="username" value={email} placeholder="Ваш логин" />
             </div>
             <div className="row column">
-              <Input name="password" type="password" placeholder="Пароль" required />
+              <Input name="password" type="password" placeholder="Ваш пароль" />
             </div>
             <div className="row column">
               <p className="link-block">Еще не с нами? Тогда <Link to="/signup">Зарегистрируйтесь</Link></p>

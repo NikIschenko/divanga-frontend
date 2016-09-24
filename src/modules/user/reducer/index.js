@@ -28,7 +28,7 @@ export default (state = initialState, action) => {
       };
 
       if (response.user) {
-        result.current = response.user;
+        result.current = response.id_token;
       }
 
       if (response.error) {
