@@ -4,6 +4,7 @@ import Header from '../elements/Header';
 import OneColumn from '../layout/OneColumn';
 import './../../media/styles/index.scss';
 import Api from '../../../../system/Api';
+import { Event } from '../../../event/components/elements/Event';
 
 export default class Index extends React.Component {
 
@@ -32,10 +33,10 @@ export default class Index extends React.Component {
 
   render() {
     return (
-      <div className="page-registry welcome">
+      <div className="test">
         <Header />
         <OneColumn>
-          Main content
+          <Event event={null} />
         </OneColumn>
       </div>
     );
