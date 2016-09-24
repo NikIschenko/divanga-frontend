@@ -1,2 +1,2 @@
-job1:
+job2:
   script: 'npm install && npm run dev'
