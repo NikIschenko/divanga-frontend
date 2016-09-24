@@ -1,0 +1,46 @@
+@import "../base/variables";
+
+.form-field {
+  position: relative;
+
+  small {
+    position: absolute;
+    width: 0;
+    opacity: 0;
+    transition: width .5s .25s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+    left: 15px;
+    bottom: -10px;
+  }
+}
+
+.error {
+  position: relative;
+
+  input,
+  select,
+  .Select {
+    box-shadow: 0 0 0 2px $color-danger;
+  }
+
+  small {
+    opacity: 1;
+    width: 100%;
+    color: $color-danger;
+  }
+}
+
+@media screen and (max-width: map-get($breakpoints, "medium")) {
+
+  .error {
+    small {
+      position: relative;
+      float: left;
+      bottom: 5px;
+      left: 0;
+    }
+  }
+}
+

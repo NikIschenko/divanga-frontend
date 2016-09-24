@@ -1,0 +1,772 @@
+.sprite {
+  background-image: url(../../images/sprite.png);
+  display: inline-block;
+}
+
+@media (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
+  .sprite {
+    background-image: url(../../images/sprite@2x.png);
+    background-size: 320px 3903px;
+  }
+}
+
+.icon-add-customer {
+  width: 20px;
+  height: 20px;
+  background-position: 0 0;
+}
+
+.icon-admin {
+  width: 12px;
+  height: 14px;
+  background-position: 0 -20px;
+}
+
+.icon-arrow-down-icon {
+  width: 7px;
+  height: 4px;
+  background-position: 0 -34px;
+}
+
+.icon-back-icon {
+  width: 13px;
+  height: 23px;
+  background-position: 0 -38px;
+}
+
+.icon-back-tulip {
+  width: 12px;
+  height: 21px;
+  background-position: 0 -61px;
+}
+
+.icon-barcode-icon-off {
+  width: 22px;
+  height: 16px;
+  background-position: 0 -82px;
+}
+
+.icon-barcode-icon-on {
+  width: 22px;
+  height: 16px;
+  background-position: 0 -98px;
+}
+
+.icon-bookmark-icon-off {
+  width: 25px;
+  height: 24px;
+  background-position: 0 -114px;
+}
+
+.icon-bookmark-icon-on {
+  width: 25px;
+  height: 24px;
+  background-position: 0 -138px;
+}
+
+.icon-bookmarks-icon {
+  width: 25px;
+  height: 24px;
+  background-position: 0 -162px;
+}
+
+.icon-cart-av-no-pic {
+  width: 60px;
+  height: 60px;
+  background-position: 0 -186px;
+}
+
+.icon-cart-empty {
+  width: 30px;
+  height: 28px;
+  background-position: 0 -246px;
+}
+
+.icon-cart-empty-lc {
+  width: 21px;
+  height: 27px;
+  background-position: 0 -274px;
+}
+
+.icon-cart-plus {
+  width: 87px;
+  height: 82px;
+  background-position: 0 -301px;
+}
+
+.icon-cash-pay-icon {
+  width: 48px;
+  height: 31px;
+  background-position: 0 -383px;
+}
+
+.icon-checkmark-filled {
+  width: 30px;
+  height: 26px;
+  background-position: 0 -414px;
+}
+
+.icon-checkmark-outlined {
+  width: 30px;
+  height: 26px;
+  background-position: 0 -440px;
+}
+
+.icon-checkout-cart {
+  width: 27px;
+  height: 27px;
+  background-position: 0 -466px;
+}
+
+.icon-clear-cart-icon {
+  width: 27px;
+  height: 24px;
+  background-position: 0 -493px;
+}
+
+.icon-clear-cart-icon-on {
+  width: 27px;
+  height: 24px;
+  background-position: 0 -517px;
+}
+
+.icon-close-icon {
+  width: 16px;
+  height: 16px;
+  background-position: 0 -541px;
+}
+
+.icon-close-x-icon {
+  width: 26px;
+  height: 26px;
+  background-position: 0 -557px;
+}
+
+.icon-credit-pay-icon {
+  width: 43px;
+  height: 31px;
+  background-position: 0 -583px;
+}
+
+.icon-customers-icon {
+  width: 20px;
+  height: 20px;
+  background-position: 0 -614px;
+}
+
+.icon-default-customer-cell-avatar {
+  width: 52px;
+  height: 52px;
+  background-position: 0 -634px;
+}
+
+.icon-default-profile-avatar {
+  width: 140px;
+  height: 140px;
+  background-position: 0px -538px;
+  background-size: 180%;
+}
+
+.icon-dotted-plus {
+  width: 68px;
+  height: 67px;
+  background-position: 0 -862px;
+}
+
+.icon-email-icon-off {
+  width: 35px;
+  height: 25px;
+  background-position: 0 -929px;
+}
+
+.icon-email-icon-on {
+  width: 35px;
+  height: 25px;
+  background-position: 0 -954px;
+}
+
+.icon-email-receipt-icon {
+  width: 40px;
+  height: 39px;
+  background-position: 0 -979px;
+}
+
+.icon-filters-icon {
+  width: 19px;
+  height: 20px;
+  background-position: 0 -1018px;
+}
+
+.icon-forward-icon {
+  width: 13px;
+  height: 23px;
+  background-position: 0 -1038px;
+}
+
+.icon-fullscrn-icon {
+  width: 27px;
+  height: 27px;
+  background-position: 0 -1061px;
+}
+
+.icon-fullscrn-icon-close {
+  width: 27px;
+  height: 27px;
+  background-position: 0 -1088px;
+}
+
+.icon-gift-pay-icon {
+  width: 29px;
+  height: 32px;
+  background-position: 0 -1115px;
+}
+
+.icon-gift-receipt-icon {
+  width: 33px;
+  height: 39px;
+  background-position: 0 -1147px;
+}
+
+.icon-home-icon {
+  width: 19px;
+  height: 17px;
+  background-position: 0 -1186px;
+}
+
+.icon-icon-edit {
+  width: 27px;
+  height: 27px;
+  background-position: 0 -1203px;
+}
+
+.icon-icon-minus {
+  width: 20px;
+  height: 20px;
+  background-position: 0 -1230px;
+}
+
+.icon-icon-plus {
+  width: 20px;
+  height: 20px;
+  background-position: 0 -1250px;
+}
+
+.icon-icon-remove {
+  width: 24px;
+  height: 24px;
+  background-position: 0 -1270px;
+}
+
+.icon-ios7-arrow-back {
+  width: 30px;
+  height: 30px;
+  background-position: 0 -1294px;
+}
+
+.icon-iphone-americanexpress {
+  width: 32px;
+  height: 33px;
+  background-position: 0 -1324px;
+}
+
+.icon-iphone-cart-icon {
+  width: 17px;
+  height: 16px;
+  background-position: 0 -1357px;
+}
+
+.icon-iphone-keypad-check {
+  width: 25px;
+  height: 18px;
+  background-position: 0 -1373px;
+}
+
+.icon-iphone-keypad-plus-off {
+  width: 75px;
+  height: 273px;
+  background-position: 0 -1391px;
+}
+
+.icon-iphone-keypad-plus-on {
+  width: 75px;
+  height: 273px;
+  background-position: 0 -1664px;
+}
+
+.icon-iphone-mastercard {
+  width: 42px;
+  height: 26px;
+  background-position: 0 -1937px;
+}
+
+.icon-iphone-menu-btn {
+  width: 31px;
+  height: 31px;
+  background-position: 0 -1963px;
+}
+
+.icon-iphone-tab-bar-bg {
+  width: 320px;
+  height: 52px;
+  background-position: 0 -1994px;
+}
+
+.icon-iphone-visa {
+  width: 46px;
+  height: 15px;
+  background-position: 0 -2046px;
+}
+
+.icon-know-icon {
+  width: 20px;
+  height: 20px;
+  background-position: 0 -2061px;
+}
+
+.icon-logo {
+  width: 115px;
+  height: 19px;
+  background-position: 0 -2081px;
+}
+
+.icon-logo-login {
+  width: 112px;
+  height: 18px;
+  background-position: 0 -2100px;
+}
+
+.icon-logout-icon {
+  width: 24px;
+  height: 19px;
+  background-position: 0 -2118px;
+}
+
+.icon-money-icon {
+  width: 10px;
+  height: 22px;
+  background-position: 0 -2137px;
+}
+
+.icon-more-icon {
+  width: 24px;
+  height: 6px;
+  background-position: 0 -2159px;
+}
+
+.icon-more-icon-white {
+  width: 24px;
+  height: 6px;
+  background-position: -29px -2159px;
+}
+
+.icon-more-icon-on {
+  width: 24px;
+  height: 6px;
+  background-position: 0 -2165px;
+}
+
+.icon-more-icon-on-white {
+  width: 24px;
+  height: 6px;
+  background-position: -29px -2165px;
+}
+
+.icon-more-pay-icon {
+  width: 42px;
+  height: 13px;
+  background-position: 0 -2171px;
+}
+
+.icon-new-cust-icon {
+  width: 7px;
+  height: 7px;
+  background-position: 0 -2184px;
+}
+
+.icon-new-order-icon {
+  width: 29px;
+  height: 24px;
+  background-position: 0 -2191px;
+}
+
+.icon-new-order-icon-on {
+  width: 29px;
+  height: 24px;
+  background-position: 0 -2215px;
+}
+
+.icon-no-cust {
+  width: 81px;
+  height: 81px;
+  background-position: 0 -2239px;
+}
+
+.icon-no-cust-av {
+  width: 60px;
+  height: 60px;
+  background-position: 0 -2320px;
+}
+
+.icon-no-img-icon-small {
+  width: 50px;
+  height: 81px;
+  background-position: 0 -2380px;
+}
+
+.icon-numpad-icon-off {
+  width: 24px;
+  height: 24px;
+  background-position: 0 -2461px;
+}
+
+.icon-numpad-icon-on {
+  width: 24px;
+  height: 24px;
+  background-position: 0 -2485px;
+}
+
+.icon-order-icon {
+  width: 21px;
+  height: 20px;
+  background-position: 0 -2509px;
+}
+
+.icon-order-options-icon {
+  width: 24px;
+  height: 24px;
+  background-position: 0 -2529px;
+}
+
+.icon-order-options-icon-on {
+  width: 24px;
+  height: 24px;
+  background-position: 0 -2553px;
+}
+
+.icon-payment-icon {
+  width: 28px;
+  height: 24px;
+  background-position: 0 -2577px;
+}
+
+.icon-payment-icon-on {
+  width: 28px;
+  height: 24px;
+  background-position: 0 -2601px;
+}
+
+.icon-play {
+  width: 120px;
+  height: 120px;
+  background-position: 0 -2625px;
+}
+
+.icon-print-icon-off {
+  width: 29px;
+  height: 30px;
+  background-position: 0 -2745px;
+}
+
+.icon-print-icon-on {
+  width: 29px;
+  height: 30px;
+  background-position: 0 -2775px;
+}
+
+.icon-print-icon-small {
+  width: 20px;
+  height: 20px;
+  background-position: 0 -2805px;
+}
+
+.icon-print-receipt-icon {
+  width: 40px;
+  height: 39px;
+  background-position: 0 -2825px;
+}
+
+.icon-prod-icon {
+  width: 19px;
+  height: 20px;
+  background-position: 0 -2864px;
+}
+
+.icon-receipt-icon {
+  width: 13px;
+  height: 18px;
+  background-position: 0 -2884px;
+}
+
+.icon-refresh-empty {
+  width: 32px;
+  height: 32px;
+  background-position: 0 -2902px;
+}
+
+.icon-remove-customer {
+  width: 20px;
+  height: 20px;
+  background-position: 0 -2934px;
+}
+
+.icon-returns-icon-off {
+  width: 31px;
+  height: 28px;
+  background-position: 0 -2954px;
+}
+
+.icon-returns-icon-on {
+  width: 31px;
+  height: 28px;
+  background-position: 0 -2982px;
+}
+
+.icon-sat-big-checkmark {
+  width: 82px;
+  height: 82px;
+  background-position: 0 -3010px;
+}
+
+.icon-sat-bookmarks-off {
+  width: 12px;
+  height: 22px;
+  background-position: 0 -3092px;
+}
+
+.icon-sat-bookmarks-off-white {
+  width: 12px;
+  height: 22px;
+  background-position: -17px -3092px;
+}
+
+.icon-sat-bookmarks-on {
+  width: 12px;
+  height: 22px;
+  background-position: 0 -3114px;
+}
+
+.icon-sat-bookmarks-on-white {
+  width: 12px;
+  height: 22px;
+  background-position: -17px -3114px;
+}
+
+.icon-sat-cart-icon {
+  width: 27px;
+  height: 26px;
+  background-position: 0 -3136px;
+}
+
+.icon-sat-close-icon-off {
+  width: 43px;
+  height: 37px;
+  background-position: 0 -3162px;
+}
+
+.icon-sat-close-icon-on {
+  width: 43px;
+  height: 37px;
+  background-position: 0 -3199px;
+}
+
+.icon-sat-menu-off {
+  width: 24px;
+  height: 18px;
+  background-position: 0 -3236px;
+}
+
+.icon-sat-menu-on {
+  width: 24px;
+  height: 18px;
+  background-position: 0 -3254px;
+}
+
+.icon-search-icon {
+  width: 17px;
+  height: 17px;
+  background-position: 0 -3272px;
+}
+
+.icon-settings-icon {
+  width: 20px;
+  height: 20px;
+  background-position: 0 -3289px;
+}
+
+.icon-shipping-badge-icon {
+  width: 41px;
+  height: 24px;
+  background-position: 0 -3309px;
+}
+
+.icon-shipping-truck-icon {
+  width: 29px;
+  height: 24px;
+  background-position: 0 -3333px;
+}
+
+.icon-shipping-truck-icon-on {
+  width: 29px;
+  height: 24px;
+  background-position: 0 -3357px;
+}
+
+.icon-small-chevron-down {
+  width: 18px;
+  height: 10px;
+  background-position: 0 -3381px;
+}
+
+.icon-starempty {
+  width: 14px;
+  height: 13px;
+  background-position: 0 -3391px;
+}
+
+.icon-starfull {
+  width: 14px;
+  height: 13px;
+  background-position: 0 -3404px;
+}
+
+.icon-starhalf {
+  width: 14px;
+  height: 13px;
+  background-position: 0 -3417px;
+}
+
+.icon-store-credit-pay-icon {
+  width: 35px;
+  height: 32px;
+  background-position: 0 -3430px;
+}
+
+.icon-suspend-icon {
+  width: 21px;
+  height: 24px;
+  background-position: 0 -3462px;
+}
+
+.icon-suspend-icon-on {
+  width: 21px;
+  height: 24px;
+  background-position: 0 -3486px;
+}
+
+.icon-swipe-card-icon {
+  width: 68px;
+  height: 41px;
+  background-position: 0 -3510px;
+}
+
+.icon-switch-user {
+  width: 17px;
+  height: 16px;
+  background-position: 0 -3551px;
+}
+
+.icon-tip-icon {
+  width: 23px;
+  height: 24px;
+  background-position: 0 -3567px;
+}
+
+.icon-tip-icon-on {
+  width: 23px;
+  height: 24px;
+  background-position: 0 -3591px;
+}
+
+.icon-tulip-receipt-logo {
+  width: 166px;
+  height: 30px;
+  background-position: 0 -3615px;
+}
+
+.icon-user-bg-top {
+  width: 106px;
+  height: 96px;
+  background-position: 0 -3645px;
+}
+
+.icon-user-icon {
+  width: 12px;
+  height: 12px;
+  background-position: 0 -3741px;
+}
+
+.icon-void-icon-off {
+  width: 30px;
+  height: 30px;
+  background-position: 0 -3753px;
+}
+
+.icon-void-icon-on {
+  width: 30px;
+  height: 30px;
+  background-position: 0 -3783px;
+}
+
+.icon-white-menu {
+  width: 24px;
+  height: 19px;
+  background-position: 0 -3813px;
+}
+
+.icon-white-menu-lc {
+  width: 24px;
+  height: 17px;
+  background-position: 0 -3832px;
+}
+
+.icon-white-menu-on {
+  width: 24px;
+  height: 19px;
+  background-position: 0 -3849px;
+}
+
+.icon-white-menu-on-lc {
+  width: 24px;
+  height: 17px;
+  background-position: 0 -3868px;
+}
+
+.icon-x-icon {
+  width: 18px;
+  height: 18px;
+  background-position: 0 -3885px;
+}
+
+.icon-plus-round {
+  border-radius: 99px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: #777;
+  color: #FFF;
+
+  &:after {
+    font-family: "HbcIcons";
+    font-size: 14px;
+    content: '\E93E';
+    speak: none;
+    line-height: 24px;
+  }
+}
+
+.icon-minus-round {
+  border-radius: 99px;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background: #777;
+  color: #FFF;
+
+  &:after {
+    font-family: "HbcIcons";
+    font-size: 14px;
+    content: '\E938';
+    speak: none;
+    line-height: 24px;
+  }
+}

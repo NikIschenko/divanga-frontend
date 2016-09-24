@@ -1,0 +1,8 @@
+.idea
+npm-debug.log
+/node_modules
+/TEMP
+/dist
+/src/modules/*/styles/**/*.css
+/problems.txt
+.tmp

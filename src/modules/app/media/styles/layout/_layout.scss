@@ -1,0 +1,132 @@
+@import "../base/variables";
+
+.row {
+  max-width: $global-max-width;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-white;
+
+  .page-content {
+    width: 100%;
+    max-width: $global-max-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.one-column-layout,
+.two-column-layout {
+  margin: 0 auto;
+
+  .content-header {
+    margin: 16px 7.15% 0;
+
+    h1 {
+      margin: 1px 0 5px;
+      font-size: 32px;
+      text-align: center;
+    }
+
+    h2 {
+      margin: 0;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+
+  .page-content {
+    padding-bottom: 50px;
+    border-left: 1px solid $color-border;
+    border-right: 1px solid $color-border;
+    position: relative;
+
+    &.without-borders {
+      border: 0;
+    }
+  }
+
+  .sidebar-left {
+    border-left: 1px solid $color-border;
+  }
+}
+
+.one-column-layout {
+  background: #FFF;
+
+  .page-content {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+.column {
+  min-width: unset;
+}
+
+@media (max-width: $global-max-width - 2) {
+  .one-column-layout,
+  .two-column-layout {
+    .page-content {
+      border: 0;
+    }
+
+    // TODO:
+    .sidebar-left {
+      border-left: 0;
+      border-right: 1px solid $color-border;
+    }
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* PAGE ANIMATION                                                                                                     */
+/*--------------------------------------------------------------------------------------------------------------------*/
+.fade-in-enter {
+  width: 100%;
+  background: #FFF;
+  overflow: hidden;
+  position: absolute;
+  transition: all .5s ease;
+  z-index: 500;
+  box-shadow: -22px 0 22px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+}
+
+.fade-in-enter-active {
+  opacity: 1;
+}
+
+.page-enter {
+  transform: translateX(100%);
+  width: 100%;
+  background: #FFF;
+  overflow: hidden;
+  position: fixed;
+  transition: all .5s ease;
+  z-index: 500;
+  box-shadow: -22px 0 22px rgba(0, 0, 0, 0.05);
+}
+
+.page-enter.page-enter-active {
+  transform: translateX(0);
+}
+
+.page-leave, .fade-in-leave {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+}
+
+.page-leave.page-leave-active {
+}
+
+//--------------------------------------------------------------------------------------------------------------------

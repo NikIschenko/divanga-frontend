@@ -1,0 +1,117 @@
+@import "../base/variables";
+
+.clearfix {
+  &:before,
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.noradius {
+  border-radius: 0 !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.reset-{
+  &margin {
+    margin: 0 !important;
+  }
+
+  &padding {
+    margin: 0;
+  }
+}
+
+.font- {
+  &w400 {
+    font-weight: 400;
+  }
+
+  &w600 {
+    font-weight: 600;
+  }
+
+  &w800, &w700 {
+    font-weight: 800;
+  }
+}
+
+.pull- {
+  &right {
+    float: right;
+  }
+
+  &left {
+    float: left;
+  }
+}
+
+.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  &.align-bottom {
+    top: inherit;
+    bottom: 0;
+  }
+}
+
+.to-upper {
+  text-transform: uppercase;
+}
+
+.to-cap {
+  text-transform: capitalize;
+}
+
+.font- {
+  &default {
+    font-family: $font-default;
+  }
+
+  //&default-narrow {
+  //  font-family: $font-default-narrow;
+  //}
+
+  &lustria {
+    font-family: $font-lustria;
+  }
+}
+
+.text- {
+  &primary {
+    color: $color-primary;
+  }
+  &gray {
+    color: $color-gray;
+  }
+  &danger {
+    color: $color-danger
+  }
+  &default {
+    color: $color-default
+  }
+  &black {
+    color: $color-black;
+  }
+}
+
+.relative {
+  position: relative;
+}

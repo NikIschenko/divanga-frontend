@@ -1,0 +1,62 @@
+@import "../base/variables";
+
+.rangeslider {
+  margin: 20px 0;
+  position: relative;
+  background: #e6e6e6;
+
+  .rangeslider__fill,
+  .rangeslider__handle {
+    position: absolute;
+  }
+
+  .rangeslider__fill {
+    display: block;
+  }
+
+  .rangeslider__handle {
+    background: $color-primary;
+    cursor: pointer;
+    display: inline-block;
+
+    &:active {
+      background: darken($color-primary, 5%);
+    }
+  }
+}
+
+/**
+ * Rangeslider - Horizontal slider
+ */
+.rangeslider-horizontal {
+  height: 8px;
+  border-radius: 10px;
+  .rangeslider__fill {
+    height: 100%;
+    background: $color-primary;
+    border-radius: 10px;
+    top: 0;
+  }
+  .rangeslider__handle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    top: -22px;
+
+    &:after, &:before {
+      content: '';
+      width: 2px;
+      height: 16px;
+      background: #FFF;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -4px;
+      margin-top: -8px;
+    }
+
+    &:after {
+      margin-left: 2px;
+    }
+  }
+}

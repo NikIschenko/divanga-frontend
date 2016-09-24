@@ -1,0 +1,56 @@
+@import "colors";
+
+$global-max-width: 1200px;
+$global-indent: 25px;
+$global-margin: 1rem;
+$global-padding: 1rem;
+
+// 2. Breakpoints
+// --------------
+
+$breakpoints: (
+  small: 0,
+  medium: 640px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px,
+);
+
+$grid-column-gutter: (
+  small: 25px,
+  medium: 25px,
+);
+
+// 4. Base Typography
+// ------------------
+
+$header-sizes: (
+  small: (
+    'h1': 24,
+    'h2': 20,
+    'h3': 19,
+    'h4': 20,
+    'h5': 17,
+    'h6': 16,
+  ),
+  medium: (
+    'h1': 48,
+    'h2': 40,
+    'h3': 31,
+    'h4': 27,
+    'h5': 20,
+    'h6': 16,
+  ),
+);
+
+$headerHeight: 126px;
+$headerHeightWithoutMenu: 82px;
+
+// font-family
+$font-default: 'Open Sans', sans-serif;
+$font-default-narrow: 'Open Sans', sans-serif;
+$font-open-sans: 'Open Sans', sans-serif;
+$font-lustria: 'Open Sans', sans-serif;
+$font-icons: 'HBC';
+
+$font-size-default: 14px;

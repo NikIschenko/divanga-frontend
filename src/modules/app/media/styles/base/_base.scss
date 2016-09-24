@@ -1,0 +1,83 @@
+@import "variables";
+@import "../utils/mixins";
+
+html,
+body {
+  min-height: 100vh;
+  padding: 0 !important;
+  font-family: $font-default;
+  font-size: $font-size-default;
+  color: $color-default;
+  overflow-x: hidden;
+}
+
+img {
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-default;
+  font-weight: normal;
+  padding: 0;
+  margin: 0 0 1.25rem 0;
+}
+
+h1 {
+  font-size: $font-size-default*3.25;
+  font-family: $font-lustria;
+}
+
+a {
+  color: $color-default;
+  transition: all .15s ease;
+
+  &:focus {
+    color: $color-default;
+  }
+
+  &:hover,
+  &.active {
+    color: $color-primary;
+  }
+}
+
+input,
+select {
+  padding: 15px 15px 13px;
+  margin-bottom: 15px;
+  width: 100%;
+  background: #FFF;
+  border: 0;
+  outline: 0;
+  line-height: 1;
+  transition: all .15s ease, box-shadow .3s ease;
+  cursor: pointer;
+
+  &:focus {
+    box-shadow: 0 0 0 1px #dadada;
+  }
+
+  &[disabled] {
+    background: #e6e6e6;
+  }
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+.hd {
+  input {
+    border: 1px solid #ccc;
+    box-shadow: none;
+  }
+}
+
+.error-message {
+  color: #ff4136;
+}

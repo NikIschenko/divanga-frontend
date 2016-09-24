@@ -1,0 +1,67 @@
+@import "../base/variables";
+
+.search {
+  position: relative;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  text-align: center;
+  color: $color-gray;
+  background-color: $color-select;
+  cursor: text;
+
+  .search-content {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    transition: all .5s;
+
+    &::before {
+      content: "\e949";
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+      line-height: 20px;
+      height: 20px;
+      left: 7px;
+      font-family: $font-icons;
+    }
+
+    input {
+      width: 100%;
+      margin: 0;
+      padding: 10px 25px 6px;
+      box-sizing: border-box;
+      border: 0;
+      outline: none;
+      line-height: 1;
+      color: $color-black;
+      background: none;
+    }
+  }
+
+  .cancel {
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -10px;
+    right: 10px;
+    cursor: pointer;
+
+    &::before {
+      content: '\e92c';
+      font-family: $font-icons;
+      font-size: $font-size-default;
+    }
+  }
+
+  &.active {
+    .search-content {
+      min-width: 100%;
+    }
+
+    .cancel {
+      display: block;
+    }
+  }
+}

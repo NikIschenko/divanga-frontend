@@ -1,0 +1,13 @@
+@import "../base/variables";
+
+@mixin tablet {
+  @media (max-width: map-get($breakpoints, "medium") - 1) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: map-get($breakpoints, "medium") + 1) {
+    @content;
+  }
+}

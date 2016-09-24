@@ -1,0 +1,431 @@
+@import "base/variables";
+
+@font-face {
+  font-family: $font-default;
+  src: url('../fonts/gotham/bold.eot');
+  src: local('☺'), url('../fonts/gotham/bold.woff') format('woff'), url('../fonts/gotham/bold.ttf') format('truetype'), url('../fonts/gotham/bold.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-default;
+  src: url('../fonts/gotham/normal.eot');
+  src: local('☺'), url('../fonts/gotham/normal.woff') format('woff'), url('../fonts/gotham/normal.ttf') format('truetype'), url('../fonts/gotham/normal.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-default-narrow;
+  src: url('../fonts/gotham-narrow/bold.eot');
+  src: local('☺'), url('../fonts/gotham-narrow/bold.woff') format('woff'), url('../fonts/gotham-narrow/bold.ttf') format('truetype'), url('../fonts/gotham-narrow/bold.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-default-narrow;
+  src: url('../fonts/gotham-narrow/normal.eot');
+  src: local('☺'), url('../fonts/gotham-narrow/normal.woff') format('woff'), url('../fonts/gotham-narrow/normal.ttf') format('truetype'), url('../fonts/gotham-narrow/normal.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HBC';
+  //src: url('../fonts/icons/hbc-icons.eot');
+  src: local('☺'), //url('../fonts/icons/hbc-icons.woff') format('woff'),
+  url('../fonts/icons/hbc-icons.ttf') format('truetype');
+  //, url('../fonts/icons/hbc-icons.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="hbc-"], [class*=" hbc-"] {
+  display: inline-block;
+  font-family: "HBC";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hbc- {
+  &calendar:before {
+    content: '\E900';
+  }
+
+  &mail:before {
+    content: '\E901';
+  }
+
+  &upload:before {
+    content: '\E902';
+  }
+
+  &minus:before {
+    content: '\E903';
+  }
+
+  &phone:before {
+    content: '\E904';
+  }
+
+  &item1:before {
+    content: '\E905';
+  }
+
+  &item2:before {
+    content: '\E906';
+  }
+
+  &item3:before {
+    content: '\E907';
+  }
+
+  &item4:before {
+    content: '\E908';
+  }
+
+  &comment:before {
+    content: '\E909';
+  }
+
+  &item5:before {
+    content: '\E90A';
+  }
+
+  &item6:before {
+    content: '\E90B';
+  }
+
+  &search-bold:before {
+    content: '\E90C';
+  }
+
+  &check-bold:before {
+    content: '\E90D';
+  }
+
+  &check-light:before {
+    content: '\E90E';
+  }
+
+  &expand:before {
+    content: '\E90F';
+  }
+
+  &user-fill:before {
+    content: '\E910';
+  }
+
+  &grid:before {
+    content: '\E911';
+  }
+
+  &plus:before {
+    content: '\E912';
+  }
+
+  &comment-fill:before {
+    content: '\E913';
+  }
+
+  &contact-book:before {
+    content: '\E914';
+  }
+
+  &marker:before {
+    content: '\E915';
+  }
+
+  &photocam:before {
+    content: '\E916';
+  }
+
+  &checkbox-stroke:before {
+    content: '\E917';
+  }
+
+  &checkbox-fill:before {
+    content: '\E918';
+  }
+
+  &user-stroke:before {
+    content: '\E919';
+  }
+
+  &plus-fill:before {
+    content: '\E91A';
+  }
+
+  &info:before {
+    content: '\E91B';
+  }
+
+  &plus-stroke:before {
+    content: '\E91C';
+  }
+
+  &triangle:before {
+    content: '\E91D';
+  }
+
+  &warning:before {
+    content: '\E91E';
+  }
+
+  &success:before {
+    content: '\E91F';
+  }
+
+  &expand-round:before {
+    content: '\E920';
+  }
+
+  &bag:before {
+    content: '\E921';
+  }
+
+  &barcode:before {
+    content: '\E922';
+  }
+
+  &edit:before {
+    content: '\E923';
+  }
+
+  &card:before {
+    content: '\E924';
+  }
+
+  &checkbox-bolder:before {
+    content: '\E925';
+  }
+
+  &arrow-down:before {
+    content: '\E926';
+  }
+
+  &arrow-left:before {
+    content: '\E927';
+  }
+
+  &arrow-right:before {
+    content: '\E928';
+  }
+
+  &arrow-top:before {
+    content: '\E929';
+  }
+
+  &time:before {
+    content: '\E92A';
+  }
+
+  &cross:before {
+    content: '\E92B';
+  }
+
+  &close:before,
+  &error:before {
+    content: '\E92C';
+  }
+
+  &pencil:before {
+    content: '\E92D';
+  }
+
+  &facebook:before {
+    content: '\E92E';
+  }
+
+  &item7:before {
+    content: '\E92F';
+  }
+
+  &item8:before {
+    content: '\E930';
+  }
+
+  &gift:before {
+    content: '\E931';
+  }
+
+  &google-plus:before {
+    content: '\E932';
+  }
+
+  &menu:before {
+    content: '\E933';
+  }
+
+  &instagram:before {
+    content: '\E934';
+  }
+
+  &lock:before {
+    content: '\E935';
+  }
+
+  &mute:before {
+    content: '\E936';
+  }
+
+  &resize-1:before {
+    content: '\E937';
+  }
+
+  &minus-thin:before {
+    content: '\E938';
+  }
+
+  &mobile:before {
+    content: '\E939';
+  }
+
+  &equal:before {
+    content: '\E93A';
+  }
+
+  &grid1:before {
+    content: '\E93B';
+  }
+
+  &pause:before {
+    content: '\E93C';
+  }
+
+  &item9:before {
+    content: '\E93D';
+  }
+
+  &plus-thin:before {
+    content: '\E93E';
+  }
+
+  &copy:before {
+    content: '\E93F';
+  }
+
+  &print:before {
+    content: '\E940';
+  }
+
+  &question:before {
+    content: '\E941';
+  }
+
+  &reload:before {
+    content: '\E942';
+  }
+
+  &cross-bold:before {
+    content: '\E943';
+  }
+
+  &resize-2:before {
+    content: '\E944';
+  }
+
+  &share:before {
+    content: '\E945';
+  }
+
+  &item10:before {
+    content: '\E946';
+  }
+
+  &item11:before {
+    content: '\E947';
+  }
+
+  &like:before {
+    content: '\E948';
+  }
+
+  &search-light:before {
+    content: '\E949';
+  }
+
+  &upload-1:before {
+    content: '\E94A';
+  }
+
+  &sms:before {
+    content: '\E94B';
+  }
+
+  &star:before {
+    content: '\E94C';
+  }
+
+  &stop:before {
+    content: '\E94D';
+  }
+
+  &triangle-down:before {
+    content: '\E94E';
+  }
+
+  &triangle-right:before {
+    content: '\E94F';
+  }
+
+  &twitter-1:before {
+    content: '\E950';
+  }
+
+  &twitter-2:before {
+    content: '\E951';
+  }
+
+  &triangle-top:before {
+    content: '\E952';
+  }
+
+  &play:before {
+    content: '\E953';
+  }
+
+  &vimeo:before {
+    content: '\E954';
+  }
+
+  &sound:before {
+    content: '\E955';
+  }
+
+  &tetris:before {
+    content: '\E956';
+  }
+
+  &youtube-play:before {
+    content: '\E957';
+  }
+
+  &search-plus:before {
+    content: '\E958';
+  }
+
+  &search-minus:before {
+    content: '\E959';
+  }
+
+  &bag-stroke:before {
+    content: '\E95A';
+  }
+
+  &new:before {
+    content: '\E95B';
+  }
+
+  &round-minus:before {
+    content: '\E95C';
+  }
+}

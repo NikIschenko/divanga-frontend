@@ -1,0 +1,56 @@
+@import "../base/variables";
+
+.checkbox {
+  margin: 7.5px 0 15px;
+  padding-left: 30px;
+  display: block;
+  position: relative;
+  line-height: 24px;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+
+    &:checked ~ span {
+      border: 1px solid $color-primary;
+      background: $color-primary;
+
+      &:before {
+        display: block;
+      }
+    }
+  }
+
+  span {
+    width: 20px;
+    height: 20px;
+    border-radius: 99px;
+    border: 1px solid #000;
+    display: inline-block;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    transition: all .15s ease;
+
+    &:before {
+      color: #FFF;
+      content: '\E90E';
+      display: none;
+      font-family: "HBC";
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+      z-index: 5;
+      font-size: 9px;
+      top: 5px;
+      left: 4px;
+    }
+  }
+}

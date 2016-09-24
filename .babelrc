@@ -1,0 +1,4 @@
+{
+  "presets": ["es2015", "stage-0", "react"],
+  //"plugins": ["react-hot-loader/babel"]  uncomment this, if ypu want use react-hot-loader v3
+}

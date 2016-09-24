@@ -1,0 +1,39 @@
+@import "../base/variables";
+
+.radio-list {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 15px;
+  .radio {
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+    padding-top: 5px;
+    cursor: pointer;
+    &.checked {
+      &:before {
+        content: '\E90E';
+        background: $color-primary;
+        border-color: $color-primary;
+      }
+    }
+    &:before {
+      font-family: 'HBC', serif;
+      color: #fff;
+      text-align: center;
+      line-height: 21px;
+      vertical-align: middle;
+      content: '';
+      float: left;
+      width: 21px;
+      height: 21px;
+      border: solid 1px #ccc;
+      border-radius: 35px;
+      margin-right: 10px;
+      margin-top: -2px;
+      font-size: 9px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+}

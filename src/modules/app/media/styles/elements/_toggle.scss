@@ -1,0 +1,35 @@
+$toggleSize: 30px;
+
+.toggle {
+  display: inline-block;
+  width: $toggleSize + 20px;
+  height: $toggleSize;
+  border-radius: $toggleSize;
+  background: #b5b5b5;
+  cursor: pointer;
+  margin-left: 10px;
+  vertical-align: middle;
+  transition: all 0.5s;
+
+  &.on {
+    background: #2dbe35;
+    &:before {
+      left: 50%;
+      margin-left: -6%;
+    }
+  }
+
+  &:before {
+    content: '';
+    display: block;
+    width: $toggleSize - 4px;
+    height: $toggleSize - 4px;
+    border-radius: $toggleSize - 4px;
+    background: #fff;
+    position: relative;
+    left: 2px;
+    top: 2px;
+    transition: all 0.4s;
+    box-shadow: -3px 2px 5px rgba(0, 0, 0, 0.21), 2px 2px 1px rgba(0, 0, 0, 0.2);
+  }
+}

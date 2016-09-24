@@ -1,0 +1,164 @@
+@import "~react-select/dist/react-select.min.css";
+@import "../base/variables";
+
+.Select {
+
+  &.is-focused {
+    .Select-control {
+      box-shadow: none;
+      border: 0;
+    }
+  }
+
+  .Select-control:hover {
+    box-shadow: none;
+  }
+
+  &-control {
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: 0;
+    border: 0;
+    color: $color-default;
+    display: block;
+    height: auto;
+    outline: 0;
+    width: 100%;
+    margin: 0 0 15px 0;
+
+
+    &:not(.is-searchable)>.Select-input {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &-arrow-zone {
+    position: absolute;
+    right: 3.5%;
+    top: 50%;
+    display: inline-block;
+    font-family: 'HBC';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    margin: -7px 0 0 0;
+    padding: 0;
+    color: $color-gray;
+
+    &:after {
+      content: '\E926';
+    }
+
+    .Select-arrow {
+      display: none;
+    }
+  }
+
+  &-placeholder {
+    width: 100%;
+    position: static;
+    text-align: left;
+    padding: 16px 15px 15px;
+    line-height: 1;
+  }
+
+  &-menu-outer {
+    border-radius: 8px;
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+    max-height: 350px;
+    margin-top: 5px;
+    right: 0;
+    border: 0;
+    max-width: 250px;
+    -webkit-overflow-scrolling: touch;
+
+    &:before {
+      content: '';
+      position: absolute;
+      border-bottom: 12px solid #FFF;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      right: 4%;
+      top: -12px;
+    }
+
+
+    .Select-option, .Select-noresults {
+      position: relative;
+      text-align: left;
+      padding: 10px 15px;
+      font-size: 15px;
+      color: $color-default;
+      border-bottom: 1px solid #EEE;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+
+      &:last-child {
+        border: 0
+      }
+
+      &:hover, &.is-focused {
+        background: none;
+        color: $color-primary;
+      }
+
+      &.is-selected {
+        &:after {
+          position: absolute;
+          right: 18px;
+          top: 15px;
+          font-size: 12px;
+          display: inline-block;
+          font-family: 'HBC';
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          color: $color-primary;
+          content: '\E90D';
+        }
+      }
+    }
+  }
+
+  &-menu {
+    max-height: 348px;
+    overflow-y: auto;
+  }
+}
+
+.Select-item-label .Select-item-label__a {
+  color: #08c;
+  cursor: pointer;
+}
+.Select-item-icon {
+  cursor: pointer;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  border-right: 1px solid #c9e6f2;
+  padding: 1px 5px 3px;
+}
+.Select-item-icon:hover,
+.Select-item-icon:focus {
+  background-color: #ddeff7;
+  color: #0077b3;
+}
+.Select-item-icon:active {
+  background-color: #c9e6f2;
+}
+.Select--multi.is-disabled .Select-item {
+  background-color: #f2f2f2;
+  border: 1px solid #d9d9d9;
+  color: #888;
+}

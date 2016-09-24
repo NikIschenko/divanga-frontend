@@ -1,0 +1,32 @@
+@import "../../../../app/media/styles/base/variables";
+
+.social-auth-block {
+  padding: 3rem 0;
+  margin: 0 0 2rem 0;
+  border-bottom: 1px solid #CCC;
+
+  button.button {
+
+    position: relative;
+    letter-spacing: 0;
+    text-indent: 30px;
+    padding: 0;
+    white-space: nowrap;
+
+    i {
+      font-size: 26px;
+      text-indent: 0;
+      margin-left: -30px;
+      margin-right: 2.5%;
+      position: relative;
+      top: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: map-get($breakpoints, "medium")) {
+
+  .social-auth-block {
+    padding: 1.5rem .75rem;
+  }
+}

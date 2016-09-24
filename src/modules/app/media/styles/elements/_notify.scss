@@ -1,0 +1,20 @@
+.message-box {
+  background: #a7d9f9;
+  color: #2c75b7;
+  padding: 15px;
+  margin-bottom: 1.25rem;
+
+  &.warning {
+    color: #cc7f2a;
+    background: #f6e5c4;
+  }
+
+  &.error {
+    color: #de4e3b;
+    background: #efd3d0;
+  }
+
+  i {
+    margin: 3px 15px;
+  }
+}
