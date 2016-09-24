@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import component from '../../components/pages/Index';
+import component from '../../components/layout/Sidebar';
 
 export const mapStateToProps = ({ event }) => {
   return { event };

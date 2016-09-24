@@ -17,20 +17,20 @@ export default class OneColumn extends Component {
   };
 
   render() {
-    const { children, className, showHeader, showMenu, contentWithoutBorders } = this.props;
+    const { children, className, showMenu } = this.props;
     const layoutClass = classNames('one-column-layout', className);
 
-    let mainClassName = 'row collapse layout';
+    let mainClassName = 'row layout';
     mainClassName += !showMenu ? ' header-without-menu' : '';
 
     let pageContentClassName = 'column page-content';
-    pageContentClassName += contentWithoutBorders ? ' without-borders' : '';
+
 
     return (
       <div className={layoutClass}>
        
         <main className={mainClassName}>
-          <div className={pageContentClassName}>{children}</div>
+          <div className="column page-content">{children}</div>
         </main>
       </div>
     );

@@ -55,7 +55,7 @@ const Input = React.createClass({
   },
 
   getRenderErrorMessage() {
-    return this.showRequired() ? "This field is required" : this.getErrorMessage();
+    return this.showRequired() ? "Обязательное поле" : this.getErrorMessage();
   },
 
   render() {

@@ -1,8 +1,6 @@
 import { hashHistory, browserHistory } from 'react-router';
 import Page404 from '../components/pages/Page404';
 import IndexPage from '../containers/pages/Index';
-import LeftSidebar from '../containers/layout/LeftSidebar';
-import Popup from '../containers/elements/Popup';
 
 export default {
 
@@ -64,8 +62,5 @@ export default {
    * @var array of React component {globalComponents}
    * List of react components that was added into global template
    */
-  globalComponents: [
-    LeftSidebar,
-    Popup,
-  ],
+  globalComponents: [],
 };

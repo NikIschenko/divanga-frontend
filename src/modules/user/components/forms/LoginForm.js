@@ -10,8 +10,8 @@ import classNames from 'classnames';
 class LoginForm extends Component {
 
   static defaultProps = {
-    title: "Login with Email",
-    className: "medium-4",
+    title: "Войти с помощью email",
+    className: "medium-6 auth-form",
   };
 
   constructor(props) {
@@ -51,7 +51,7 @@ class LoginForm extends Component {
       <Form onValidSubmit={this.onSubmit} method="post">
         {
           (isLoading)
-            ? <ModalMini>Authenticating...</ModalMini>
+            ? <ModalMini>Авторизация...</ModalMini>
             : null
         }
         <div className="row align-center">
@@ -68,12 +68,12 @@ class LoginForm extends Component {
               <Input name="email" value={email} placeholder="Email" validations="isEmail" validationError="This is not a valid email" required />
             </div>
             <div className="row column">
-              <Input name="password" type="password" placeholder="Password" required />
+              <Input name="password" type="password" placeholder="Пароль" required />
             </div>
             <div className="row column">
-              <p className="link-block">New User? <Link to="/signup">Create a new account</Link></p>
+              <p className="link-block">Еще не с нами? Тогда <Link to="/signup">Зарегистрируйтесь</Link></p>
             </div>
-            <button type="submit" className="button big fixed align-bottom">Login</button>
+            <button type="submit" className="button big expanded align-bottom">Войти</button>
           </div>
         </div>
       </Form>

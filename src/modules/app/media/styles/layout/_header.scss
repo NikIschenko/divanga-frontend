@@ -1,12 +1,23 @@
 @import "../base/variables";
 @import "../utils/mixins";
 
+.auth-form {
+  margin: 15% 0 0 0;
+  background: #FFF;
+  padding: 50px;
+  border-radius: 3px;
+}
+
 
 header {
   background: #FFF;
   z-index: 10;
   border-bottom: 1px solid #EEE;
   padding: 10px;
+
+  .row {
+    max-width: 1200px;
+  }
 
   .logo {
 
@@ -68,4 +79,83 @@ header {
       }
     }
   }
+}
+
+body {
+  background: #fafafa;
+}
+
+
+.event {
+  border-radius: 3px;
+  background: #FFF;
+  margin: 0 20px 50px 20px;
+  padding: 0;
+  transition: all .25s ease;
+  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.1);
+
+  a:not(.button) {
+    border-bottom: 1px solid rgba(4, 125, 202, 0.16);
+    font-weight: normal;
+    font-size: 14px;
+    color: #047dca;
+  }
+
+  &:hover {
+    box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  h3,
+  .text,
+  .actions {
+    padding: 15px;
+  }
+
+  .actions {
+    margin: 0 !important;
+    border-top: 1px solid #EEE;
+  }
+
+  h3 {
+    font-size: 16px;
+    margin: 0;
+    padding-bottom: 0;
+    font-weight: bold;
+  }
+
+  .text {
+
+    img {
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+aside {
+  margin-top: 25px;
+  border-radius: 3px;
+  background: #FFF;
+  padding: 0;
+
+  .event {
+    margin: 0;
+    box-shadow: none !important;
+
+    .button {
+      display: none;
+    }
+  }
+}
+
+.section-title {
+  margin: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 15px;
+  border-bottom: 1px solid #EEE;
+  font-weight: bold;
 }

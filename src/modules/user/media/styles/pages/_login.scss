@@ -1,14 +1,20 @@
 .login,
 .signup {
-  background: #f2f2f2;
   min-height: 100vh;
   padding-bottom: 50px;
 
   .form-field {
     small {
-      left: inherit;
-      top: 15px;
-      margin-left: 15px;
+      display: none;
+    }
+
+    input {
+      background: #F1F1F1;
+
+
+      &[name="email"] {
+        margin-bottom: 25px;
+      }
     }
   }
 
@@ -18,31 +24,6 @@
     margin: 2rem 0;
   }
 
-  .button- {
-    &twitter {
-      background: #55acee;
-
-      &:hover {
-        background: #58baff;
-      }
-    }
-
-    &facebook {
-      background: #3b5999;
-
-      &:hover {
-        background: #436bb3;
-      }
-    }
-
-    &google-plus {
-      background: #dd4b39;
-
-      &:hover {
-        background: #ed4e3c;
-      }
-    }
-  }
 
   h4 {
     margin:2rem 0;

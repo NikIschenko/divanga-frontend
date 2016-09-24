@@ -67,18 +67,13 @@ class SignupForm extends Component {
       <Form onValidSubmit={this.onSubmit} ref="form" method="post">
         {
           (isLoading)
-            ? <ModalMini>Authenticating...</ModalMini>
+            ? <ModalMini>Регистрируем...</ModalMini>
             : null
         }
         <div className="row align-center">
-          <div className="column medium-4 ">
+          <div className="column medium-6 auth-form">
             <div className="row column">
-              <h4 className="text-center">Register with Email</h4>
-              {
-                (formValues && (!formValues.email || !password))
-                  ? <Notify type="warning">Registration is almost done! Please enter your {!formValues.email ? 'email and' : ''} password</Notify>
-                  : null
-              }
+              <h4 className="text-center">Регистрация</h4>
               {
                 (formError && typeof(formError) === "object")
                   ? formError.map((error, key) => (<Notify key={key} type="error">{error}</Notify>))
@@ -114,10 +109,10 @@ class SignupForm extends Component {
               />
             </div>
             <div className="row column">
-              <p className="link-block">Already a member? <Link to="/login">Log In</Link></p>
+              <p className="link-block">Уже зарегестрированы? <Link to="/login">Войдите</Link></p>
             </div>
-            <button type="submit" className="button big fixed align-bottom">
-              Start your registry
+            <button type="submit" className="button big expanded align-bottom">
+              Зарегистрироваться
             </button>
           </div>
         </div>
