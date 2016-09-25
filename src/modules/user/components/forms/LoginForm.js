@@ -10,7 +10,7 @@ import classNames from 'classnames';
 class LoginForm extends Component {
 
   static defaultProps = {
-    title: "Войти с помощью email",
+    title: "Авторизация",
     className: "medium-6 auth-form",
   };
 

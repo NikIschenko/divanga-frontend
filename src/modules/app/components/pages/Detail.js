@@ -24,13 +24,42 @@ export default class Detail extends React.Component {
 
   render() {
 
+    const predictions = [
+      {
+        id: 1,
+        title: "",
+        eventStart: "",
+        eventEnd: "",
+        answers: [{title: "", answersCount: 323}]
+      },
+      {},
+      {},
+    ];
+
     const { detailEvent } = this.props.event;
 
     return (
       <div className="test">
         <Header />
         <TwoColumn >
-          {detailEvent.title}
+          <div className="event">
+            <h3>
+              {detailEvent.title}
+            </h3>
+            <div className="text" dangerouslySetInnerHTML={{__html: detailEvent.text}}></div>
+            <div className="row actions">
+              <div className="column">
+                { detailEvent.create_date}
+              </div>
+              <div className="column">
+                <span>просмотров { detailEvent.views}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="predictions">
+
+          </div>
         </TwoColumn>
       </div>
     );

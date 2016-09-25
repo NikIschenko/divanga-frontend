@@ -13,20 +13,26 @@ export default class Index extends React.Component {
   componentWillMount() {
     const { dispatch, params } = this.props;
 
-    Api.fetchJSON('api/events/top/3').then((response) => {
-
-      console.log(response);
-      //dispatch(EventActions.set(response));
+    Api.fetchJSON('api/events/top/' + params.days).then((response) => {
+      dispatch(EventActions.setTop(response));
     });
   }
 
   render() {
 
+    const { event } = this.props;
+
     return (
       <div className="test">
         <Header />
         <TwoColumn >
-
+          {
+            event.topItems.map((item, key) => {
+              return (
+                <Event route={true} key={key} event={item} />
+              );
+            })
+          }
         </TwoColumn>
       </div>
     );

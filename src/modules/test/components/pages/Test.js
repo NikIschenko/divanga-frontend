@@ -153,6 +153,665 @@ class Test extends React.Component {
           <br/>
         </div>
 
+
+
+
+
+        <br/>
+        <br/>
+        <strong>Simple-line-icons</strong>
+        <div className="row text-center small-up-6 icon-list">
+          <div className="columns">
+            <p><i className="si si-action-redo fa-2x"></i></p>
+            <div>si-action-redo</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-action-undo fa-2x"></i></p>
+            <div>si-action-undo</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-anchor fa-2x"></i></p>
+            <div>si-anchor</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-arrow-down fa-2x"></i></p>
+            <div>si-arrow-down</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-arrow-left fa-2x"></i></p>
+            <div>si-arrow-left</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-arrow-right fa-2x"></i></p>
+            <div>si-arrow-right</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-arrow-up fa-2x"></i></p>
+            <div>si-arrow-up</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-badge fa-2x"></i></p>
+            <div>si-badge</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-bag fa-2x"></i></p>
+            <div>si-bag</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-ban fa-2x"></i></p>
+            <div>si-ban</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-bar-chart fa-2x"></i></p>
+            <div>si-bar-chart</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-basket fa-2x"></i></p>
+            <div>si-basket</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-basket-loaded fa-2x"></i></p>
+            <div>si-basket-loaded</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-bell fa-2x"></i></p>
+            <div>si-bell</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-book-open fa-2x"></i></p>
+            <div>si-book-open</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-briefcase fa-2x"></i></p>
+            <div>si-briefcase</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-bubble fa-2x"></i></p>
+            <div>si-bubble</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-bubbles fa-2x"></i></p>
+            <div>si-bubbles</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-bulb fa-2x"></i></p>
+            <div>si-bulb</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-calculator fa-2x"></i></p>
+            <div>si-calculator</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-calendar fa-2x"></i></p>
+            <div>si-calendar</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-call-end fa-2x"></i></p>
+            <div>si-call-end</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-call-in fa-2x"></i></p>
+            <div>si-call-in</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-call-out fa-2x"></i></p>
+            <div>si-call-out</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-camcorder fa-2x"></i></p>
+            <div>si-camcorder</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-camera fa-2x"></i></p>
+            <div>si-camera</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-check fa-2x"></i></p>
+            <div>si-check</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-chemistry fa-2x"></i></p>
+            <div>si-chemistry</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-clock fa-2x"></i></p>
+            <div>si-clock</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-close fa-2x"></i></p>
+            <div>si-close</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-cloud-download fa-2x"></i></p>
+            <div>si-cloud-download</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-cloud-upload fa-2x"></i></p>
+            <div>si-cloud-upload</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-compass fa-2x"></i></p>
+            <div>si-compass</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-control-end fa-2x"></i></p>
+            <div>si-control-end</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-control-forward fa-2x"></i></p>
+            <div>si-control-forward</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-control-pause fa-2x"></i></p>
+            <div>si-control-pause</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-control-play fa-2x"></i></p>
+            <div>si-control-play</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-control-rewind fa-2x"></i></p>
+            <div>si-control-rewind</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-control-start fa-2x"></i></p>
+            <div>si-control-start</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-credit-card fa-2x"></i></p>
+            <div>si-credit-card</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-crop fa-2x"></i></p>
+            <div>si-crop</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-cup fa-2x"></i></p>
+            <div>si-cup</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-cursor fa-2x"></i></p>
+            <div>si-cursor</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-cursor-move fa-2x"></i></p>
+            <div>si-cursor-move</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-diamond fa-2x"></i></p>
+            <div>si-diamond</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-direction fa-2x"></i></p>
+            <div>si-direction</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-directions fa-2x"></i></p>
+            <div>si-directions</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-disc fa-2x"></i></p>
+            <div>si-disc</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-dislike fa-2x"></i></p>
+            <div>si-dislike</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-doc fa-2x"></i></p>
+            <div>si-doc</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-docs fa-2x"></i></p>
+            <div>si-docs</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-drawer fa-2x"></i></p>
+            <div>si-drawer</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-drop fa-2x"></i></p>
+            <div>si-drop</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-earphones fa-2x"></i></p>
+            <div>si-earphones</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-earphones-alt fa-2x"></i></p>
+            <div>si-earphones-alt</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-emoticon-smile fa-2x"></i></p>
+            <div>si-emoticon-smile</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-energy fa-2x"></i></p>
+            <div>si-energy</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-envelope fa-2x"></i></p>
+            <div>si-envelope</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-envelope-letter fa-2x"></i></p>
+            <div>si-envelope-letter</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-envelope-open fa-2x"></i></p>
+            <div>si-envelope-open</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-equalizer fa-2x"></i></p>
+            <div>si-equalizer</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-eye fa-2x"></i></p>
+            <div>si-eye</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-eyeglasses fa-2x"></i></p>
+            <div>si-eyeglasses</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-feed fa-2x"></i></p>
+            <div>si-feed</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-film fa-2x"></i></p>
+            <div>si-film</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-fire fa-2x"></i></p>
+            <div>si-fire</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-flag fa-2x"></i></p>
+            <div>si-flag</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-folder fa-2x"></i></p>
+            <div>si-folder</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-folder-alt fa-2x"></i></p>
+            <div>si-folder-alt</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-frame fa-2x"></i></p>
+            <div>si-frame</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-game-controller fa-2x"></i></p>
+            <div>si-game-controller</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-ghost fa-2x"></i></p>
+            <div>si-ghost</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-globe fa-2x"></i></p>
+            <div>si-globe</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-globe-alt fa-2x"></i></p>
+            <div>si-globe-alt</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-graduation fa-2x"></i></p>
+            <div>si-graduation</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-graph fa-2x"></i></p>
+            <div>si-graph</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-grid fa-2x"></i></p>
+            <div>si-grid</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-handbag fa-2x"></i></p>
+            <div>si-handbag</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-heart fa-2x"></i></p>
+            <div>si-heart</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-home fa-2x"></i></p>
+            <div>si-home</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-hourglass fa-2x"></i></p>
+            <div>si-hourglass</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-info fa-2x"></i></p>
+            <div>si-info</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-key fa-2x"></i></p>
+            <div>si-key</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-layers fa-2x"></i></p>
+            <div>si-layers</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-like fa-2x"></i></p>
+            <div>si-like</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-link fa-2x"></i></p>
+            <div>si-link</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-list fa-2x"></i></p>
+            <div>si-list</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-lock fa-2x"></i></p>
+            <div>si-lock</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-lock-open fa-2x"></i></p>
+            <div>si-lock-open</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-login fa-2x"></i></p>
+            <div>si-login</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-logout fa-2x"></i></p>
+            <div>si-logout</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-loop fa-2x"></i></p>
+            <div>si-loop</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-magic-wand fa-2x"></i></p>
+            <div>si-magic-wand</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-magnet fa-2x"></i></p>
+            <div>si-magnet</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-magnifier fa-2x"></i></p>
+            <div>si-magnifier</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-magnifier-add fa-2x"></i></p>
+            <div>si-magnifier-add</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-magnifier-remove fa-2x"></i></p>
+            <div>si-magnifier-remove</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-map fa-2x"></i></p>
+            <div>si-map</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-microphone fa-2x"></i></p>
+            <div>si-microphone</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-mouse fa-2x"></i></p>
+            <div>si-mouse</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-moustache fa-2x"></i></p>
+            <div>si-moustache</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-music-tone fa-2x"></i></p>
+            <div>si-music-tone</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-music-tone-alt fa-2x"></i></p>
+            <div>si-music-tone-alt</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-note fa-2x"></i></p>
+            <div>si-note</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-notebook fa-2x"></i></p>
+            <div>si-notebook</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-paper-clip fa-2x"></i></p>
+            <div>si-paper-clip</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-paper-plane fa-2x"></i></p>
+            <div>si-paper-plane</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-pencil fa-2x"></i></p>
+            <div>si-pencil</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-picture fa-2x"></i></p>
+            <div>si-picture</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-pie-chart fa-2x"></i></p>
+            <div>si-pie-chart</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-pin fa-2x"></i></p>
+            <div>si-pin</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-plane fa-2x"></i></p>
+            <div>si-plane</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-playlist fa-2x"></i></p>
+            <div>si-playlist</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-plus fa-2x"></i></p>
+            <div>si-plus</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-pointer fa-2x"></i></p>
+            <div>si-pointer</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-power fa-2x"></i></p>
+            <div>si-power</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-present fa-2x"></i></p>
+            <div>si-present</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-printer fa-2x"></i></p>
+            <div>si-printer</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-puzzle fa-2x"></i></p>
+            <div>si-puzzle</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-question fa-2x"></i></p>
+            <div>si-question</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-refresh fa-2x"></i></p>
+            <div>si-refresh</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-reload fa-2x"></i></p>
+            <div>si-reload</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-rocket fa-2x"></i></p>
+            <div>si-rocket</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-screen-desktop fa-2x"></i></p>
+            <div>si-screen-desktop</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-screen-smartphone fa-2x"></i></p>
+            <div>si-screen-smartphone</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-screen-tablet fa-2x"></i></p>
+            <div>si-screen-tablet</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-settings fa-2x"></i></p>
+            <div>si-settings</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-share fa-2x"></i></p>
+            <div>si-share</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-share-alt fa-2x"></i></p>
+            <div>si-share-alt</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-shield fa-2x"></i></p>
+            <div>si-shield</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-shuffle fa-2x"></i></p>
+            <div>si-shuffle</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-size-actual fa-2x"></i></p>
+            <div>si-size-actual</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-size-fullscreen fa-2x"></i></p>
+            <div>si-size-fullscreen</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-social-dribbble fa-2x"></i></p>
+            <div>si-social-dribbble</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-social-dropbox fa-2x"></i></p>
+            <div>si-social-dropbox</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-social-facebook fa-2x"></i></p>
+            <div>si-social-facebook</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-social-tumblr fa-2x"></i></p>
+            <div>si-social-tumblr</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-social-twitter fa-2x"></i></p>
+            <div>si-social-twitter</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-social-youtube fa-2x"></i></p>
+            <div>si-social-youtube</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-speech fa-2x"></i></p>
+            <div>si-speech</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-speedometer fa-2x"></i></p>
+            <div>si-speedometer</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-star fa-2x"></i></p>
+            <div>si-star</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-support fa-2x"></i></p>
+            <div>si-support</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-symbol-female fa-2x"></i></p>
+            <div>si-symbol-female</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-symbol-male fa-2x"></i></p>
+            <div>si-symbol-male</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-tag fa-2x"></i></p>
+            <div>si-tag</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-target fa-2x"></i></p>
+            <div>si-target</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-trash fa-2x"></i></p>
+            <div>si-trash</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-trophy fa-2x"></i></p>
+            <div>si-trophy</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-umbrella fa-2x"></i></p>
+            <div>si-umbrella</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-user fa-2x"></i></p>
+            <div>si-user</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-user-female fa-2x"></i></p>
+            <div>si-user-female</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-user-follow fa-2x"></i></p>
+            <div>si-user-follow</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-user-following fa-2x"></i></p>
+            <div>si-user-following</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-user-unfollow fa-2x"></i></p>
+            <div>si-user-unfollow</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-users fa-2x"></i></p>
+            <div>si-users</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-vector fa-2x"></i></p>
+            <div>si-vector</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-volume-1 fa-2x"></i></p>
+            <div>si-volume-1</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-volume-2 fa-2x"></i></p>
+            <div>si-volume-2</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-volume-off fa-2x"></i></p>
+            <div>si-volume-off</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-wallet fa-2x"></i></p>
+            <div>si-wallet</div>
+          </div>
+          <div className="columns">
+            <p><i className="si si-wrench fa-2x"></i></p>
+            <div>si-wrench</div>
+          </div>
+        </div>
+
+
         <br/>
         <br/>
         <strong className="to-upper">HBC icons</strong>
@@ -296,8 +955,8 @@ class Test extends React.Component {
           </div>
 
           <div className="columns">
-            <i className="hbc-barcode"></i>
-            <div>hbc-barcode</div>
+            <i className="hbc-bardiv"></i>
+            <div>hbc-bardiv</div>
           </div>
 
           <div className="columns">

@@ -9,6 +9,7 @@
   color: $color-gray;
   background-color: $color-select;
   cursor: text;
+  min-width: 320px;
 
   .search-content {
     display: inline-block;
@@ -17,26 +18,26 @@
     transition: all .5s;
 
     &::before {
-      content: "\e949";
+      content: "\E949";
       position: absolute;
       top: 50%;
       margin-top: -10px;
       line-height: 20px;
       height: 20px;
-      left: 7px;
+      left: 14px;
       font-family: $font-icons;
     }
 
     input {
       width: 100%;
-      margin: 0;
-      padding: 10px 25px 6px;
+      margin: 0 0 0 15px;
+      padding: 10px 20px;
       box-sizing: border-box;
       border: 0;
       outline: none;
       line-height: 1;
-      color: $color-black;
       background: none;
+      color: $color-black;
     }
   }
 
@@ -44,7 +45,7 @@
     display: none;
     position: absolute;
     top: 50%;
-    margin-top: -10px;
+    margin-top: -12px;
     right: 10px;
     cursor: pointer;
 

@@ -11,4 +11,8 @@ export default [
     path: '/signup',
     component: './modules/user/components/pages/Signup',
   },
+  {
+    path: '/personal',
+    component: './modules/user/components/pages/Personal',
+  },
 ];

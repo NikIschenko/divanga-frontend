@@ -1,7 +1,9 @@
 const initialState = {
   mainItems: [],
+  topItems: [],
   detailEvent: {},
   popularItems: [],
+
 };
 
 export default (state = initialState, action) => {
@@ -13,6 +15,8 @@ export default (state = initialState, action) => {
       return { ...state, popularItems: action.items };
     case 'SET_DETAIL':
       return { ...state, detailEvent: action.item };
+    case 'SET_TOP':
+      return { ...state, topItems: action.items };
 
     default:
       return state;

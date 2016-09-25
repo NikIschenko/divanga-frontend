@@ -14,11 +14,20 @@ export default class EventActions {
     }
   }
 
+  static setTop(items) {
+    return {
+      type: 'SET_TOP',
+      items
+    }
+  }
+
   static setDetail(item) {
     return {
       type: 'SET_DETAIL',
       item
     }
   }
+
+
 }
 
