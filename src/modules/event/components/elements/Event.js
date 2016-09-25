@@ -47,9 +47,11 @@ export class Event extends React.Component {
           <div className="column">
             { event.createDate}
           </div>
-          <div className="column">
-            <span>
-              просмотров { event.viewsCount}</span>
+          <div className="column text-right">
+            <dl className="views">
+              <dt><i className="si-eye si"></i>{ event.viewsCount}</dt>
+              <dd>просмотров</dd>
+            </dl>
           </div>
         </div>
       </div>
