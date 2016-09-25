@@ -1,72 +1,42 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {Link} from 'react-router';
 import Header from '../elements/Header';
 import TwoColumn from '../layout/TwoColumn';
 
-import { mainData } from '../../data/index';
+
+
+import {mainData, questions, comments } from '../../data/index';
 import './../../media/styles/index.scss';
 import RadioList from '../elements/RadioList';
 import Api from '../../../../system/Api';
-import { Event } from '../../../event/components/elements/Event';
+import {Event} from '../../../event/components/elements/Event';
 import EventActions from '../../../event/actions/event';
-
 
 
 export default class Detail extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { currentRadioListCheck: 1, toggleOn: 1 }
+    this.state = {currentRadioListCheck: 1, toggleOn: 1}
   };
 
   componentWillMount() {
-    const { dispatch, params } = this.props;
+    const {dispatch, params} = this.props;
 
-    const response =  mainData[params.id - 1];
+    const response = mainData[params.id - 1];
     dispatch(EventActions.setDetail(response))
   }
 
   checkRadioList = (value) => {
-    this.setState({ currentRadioListCheck: value});
+    this.setState({currentRadioListCheck: value});
   };
 
   render() {
 
-    const predictions = [
-      {
-        id: 1,
-        title: "Вопрос номер 1",
-        eventStart: "",
-        eventEnd: "",
-        answers: [{title: "", answersCount: 323}]
-      },
-      {
-        id: 2,
-        title: "Вопрос номер 2",
-        eventStart: "",
-        eventEnd: "",
-        answers: [{title: "", answersCount: 123}]
-      },
-      {
-        id: 3,
-        title: "Вопрос номер 3",
-        eventStart: "",
-        eventEnd: "",
-        answers: [{title: "", answersCount: 112}]
-      },
-      {
-        id: 4,
-        title: "Вопрос номер 4",
-        eventStart: "",
-        eventEnd: "",
-        answers: [{title: "", answersCount: 441}]
-      },
-    ];
-
-    const { detailEvent } = this.props.event;
+    const {detailEvent} = this.props.event;
     var predictionList = [];
 
-    predictions.map((prediction, index) => {
+    questions.answers.map((prediction, index) => {
       predictionList.push({
         label: prediction.title,
         value: prediction.id
@@ -97,6 +67,7 @@ export default class Detail extends React.Component {
               </div>
             </div>
             <div className="predictions">
+              <strong className="question">{questions.title}</strong>
               <RadioList
                 radios={predictionList}
                 checked={this.state.currentRadioListCheck}
@@ -105,6 +76,29 @@ export default class Detail extends React.Component {
             </div>
           </div>
 
+          <div className="comments">
+            <strong>Обсуждение</strong>
+            {
+              (comments.map((comment, key) => {
+
+                return (
+                  <div key={key} className="comment">
+                    <div className="row">
+                      <div className="image columns shrink">
+                        <img src={comment.user.image} />
+                      </div>
+                      <div className="columns text">
+                        <dl>
+                          <dt>{comment.user.name}, <span className="date">{comment.createDate}</span></dt>
+                          <dd>{comment.comment}</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                )
+              }))
+            }
+          </div>
         </TwoColumn>
       </div>
     );

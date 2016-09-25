@@ -61,3 +61,101 @@ export const SidebarData = [
     viewsCount: 53,
   },
 ];
+
+export const comments = [
+  {
+    user: {
+      name: 'Anna_911',
+      image: 'https://randomuser.me/api/portraits/women/88.jpg',
+    },
+    comment: 'Я думаю судя по активности людей тут будут меньше чем 10 проектов',
+    createDate: '24.09.2016',
+  },
+  {
+    user: {
+      name: 'Димон Антоных',
+      image: 'https://randomuser.me/api/portraits/men/98.jpg',
+    },
+    comment: 'Отличная атмосфера для генерации хороший идей, много умных ребят способных творить, раздеваться и работать до конца. Мое мнение что проектов будет больше 30',
+    createDate: '24.09.2016',
+  },
+  {
+    user: {
+      name: 'Сулугун',
+      image: 'https://randomuser.me/api/portraits/men/54.jpg',
+    },
+    comment: '2 проекта',
+    createDate: '24.09.2016',
+  },
+  {
+    user: {
+      name: 'Kapitoshka',
+      image: 'https://randomuser.me/api/portraits/men/89.jpg',
+    },
+    comment: 'Анна привет!',
+    createDate: '24.09.2016',
+  },
+  {
+    user: {
+      name: 'Андрей Палыч',
+      image: 'https://randomuser.me/api/portraits/men/22.jpg',
+    },
+    comment: 'Я думаю судя по активности людей тут будут меньше чем 10 проектов',
+    createDate: '24.09.2016',
+  },
+  {
+    user: {
+      name: 'Vovan_Russia',
+      image: 'https://randomuser.me/api/portraits/men/14.jpg',
+    },
+    comment: 'Я думаю судя по активности людей тут будут меньше чем 10 проектов',
+    createDate: '24.09.2016',
+  },
+  {
+    user: {
+      name: 'Коленька',
+      image: 'https://randomuser.me/api/portraits/men/34.jpg',
+    },
+    comment: 'Я думаю судя по активности людей тут будут меньше чем 10 проектов',
+    createDate: '24.09.2016',
+  },
+  {
+    user: {
+      name: 'Ваенга_021',
+      image: 'https://randomuser.me/api/portraits/women/25.jpg',
+    },
+    comment: 'Я думаю судя по активности людей тут будут меньше чем 10 проектов',
+    createDate: '24.09.2016',
+  },
+];
+
+export  const questions = {
+  title: "Сколько проектов доживет до презентации?",
+  answers: [
+    {
+      id: 1,
+      title: 'От 1 до 10',
+      answersCount: '14%',
+    },
+    {
+      id: 2,
+      title: 'От 10 до 20',
+      answersCount: '2%',
+    },
+    {
+      id: 3,
+      title: 'От 20 до 25',
+      answersCount: '40%',
+    },
+    {
+      id: 4,
+      title: 'От 25 до 30',
+      answersCount: '',
+    },
+    {
+      id: 5,
+      title: 'Больше 30',
+      answersCount: 232,
+    }
+  ],
+};
