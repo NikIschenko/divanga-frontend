@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+import { SidebarData } from '../../data/index'
 import Api from '../../../../system/Api';
 import { Event } from '../../../event/components/elements/Event';
 import EventActions from '../../../event/actions/event';
@@ -16,20 +17,7 @@ class Sidebar extends Component {
     //   dispatch(EventActions.setPopular(response));
     // });
 
-    const response = [
-      {
-        create_date: "24-09-2016",
-        title: "Победят ли на хакатоне #socialWeekend команда с проектом Диванга!",
-        text: "<img src='http://naviny.by/sites/default/files/socialweekend-hakaton.jpg' /> Ставлю бутылку водки что ребята а именно Денис Антоха и Колян победят",
-        views: 128,
-      },
-      {
-        create_date: "24-09-2016",
-        title: "Победят ли на хакатоне #socialWeekend команда с проектом Диванга!",
-        text: "<img src='http://naviny.by/sites/default/files/socialweekend-hakaton.jpg' /> Ставлю бутылку водки что ребята а именно Денис Антоха и Колян победят",
-        views: 128,
-      },
-    ];
+    const response = SidebarData;
     dispatch(EventActions.setPopular(response))
   }
 
@@ -43,7 +31,7 @@ class Sidebar extends Component {
         {
           popularItems.map((item, key) => {
             return (
-              <Event route={true} key={key} event={item} />
+              <Event route={true} actions={false} key={key} event={item} />
             );
           })
         }

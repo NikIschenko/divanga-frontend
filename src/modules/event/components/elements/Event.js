@@ -7,6 +7,7 @@ export class Event extends React.Component {
 
   static defaultProps = {
     route: false,
+    actions: true,
   }
 
   renderTitle() {
@@ -35,7 +36,7 @@ export class Event extends React.Component {
 
   render() {
 
-    const {event, route} = this.props;
+    const {event, route, actions} = this.props;
 
     return (
       <div className="event">
@@ -43,17 +44,27 @@ export class Event extends React.Component {
         {this.renderTitle()}
 
         <div className="text" dangerouslySetInnerHTML={{__html: event.text}}></div>
-        <div className="row actions">
-          <div className="column">
-            { event.createDate}
-          </div>
-          <div className="column text-right">
-            <dl className="views">
-              <dt><i className="si-eye si"></i>{ event.viewsCount}</dt>
-              <dd>просмотров</dd>
-            </dl>
-          </div>
-        </div>
+        {
+          (!actions)
+            ? null
+            : (
+            <div className="row actions">
+              <div className="column">
+                <dl className="date">
+                  <dt>{ event.createDate}</dt>
+                  <dd>добавлено</dd>
+                </dl>
+              </div>
+              <div className="column text-right">
+                <dl className="views">
+                  <dt><i className="si-eye si"></i>{ event.viewsCount}</dt>
+                  <dd>просмотров</dd>
+                </dl>
+              </div>
+            </div>
+          )
+        }
+
       </div>
     );
   }
