@@ -1,0 +1,3 @@
+job2:
+  image: node
+  script: 'npm install && npm run dev'
