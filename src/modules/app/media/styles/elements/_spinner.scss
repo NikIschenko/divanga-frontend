@@ -45,7 +45,7 @@ $duration: 1.4s;
   0% { stroke: $color-primary }
   25% { stroke: $color-gray }
   50% { stroke: $color-danger }
-  75% { stroke: $color-black }
+  75% { stroke: #222; }
   100% { stroke: #39cf59; }
 }
 

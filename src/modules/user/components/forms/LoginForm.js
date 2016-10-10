@@ -48,36 +48,62 @@ class LoginForm extends Component {
     const className = classNames('column', this.props.className);
 
     return (
-      <Form onValidSubmit={this.onSubmit} method="post">
-        {
-          (isLoading)
-            ? <ModalMini>Авторизация...</ModalMini>
-            : null
-        }
-        <div className="row align-center">
-          <div className={className}>
-            <div className="row column">
-              <h4 className="text-center">{title}</h4>
-              {
-                (formError)
-                  ? <Notify type="error">{formError}</Notify>
-                  : null
-              }
+      <div className="container">
+
+        <div className="flex-items-xs-center row">
+          <div className="col-xs-5">
+            <div className={className}>
+              <Form onValidSubmit={this.onSubmit} method="post">
+                <h4 className="text-center">{title}</h4>
+                {
+                  (formError)
+                    ? <Notify type="error">{formError}</Notify>
+                    : null
+                }
+                <Input name="username" value={email} placeholder="Ваш логин" />
+                <Input name="password" type="password" placeholder="Ваш пароль" />
+                <div className="row column">
+                  <p className="link-block">Еще не с нами? Тогда <Link to="/signup">Зарегистрируйтесь</Link></p>
+                </div>
+                <button type="submit" className="btn big expanded align-bottom">Войти</button>
+              </Form>
             </div>
-            <div className="row column">
-              <Input name="username" value={email} placeholder="Ваш логин" />
-            </div>
-            <div className="row column">
-              <Input name="password" type="password" placeholder="Ваш пароль" />
-            </div>
-            <div className="row column">
-              <p className="link-block">Еще не с нами? Тогда <Link to="/signup">Зарегистрируйтесь</Link></p>
-            </div>
-            <button type="submit" className="button big expanded align-bottom">Войти</button>
           </div>
         </div>
-      </Form>
+      </div>
     );
+
+    // return (
+    //   <Form onValidSubmit={this.onSubmit} method="post">
+    //     {
+    //       (isLoading)
+    //         ? <ModalMini>Авторизация...</ModalMini>
+    //         : null
+    //     }
+    //     <div className="row align-center">
+    //       <div className={className}>
+    //         <div className="row column">
+    //           <h4 className="text-center">{title}</h4>
+    //           {
+    //             (formError)
+    //               ? <Notify type="error">{formError}</Notify>
+    //               : null
+    //           }
+    //         </div>
+    //         <div className="row column">
+    //           <Input name="username" value={email} placeholder="Ваш логин" />
+    //         </div>
+    //         <div className="row column">
+    //           <Input name="password" type="password" placeholder="Ваш пароль" />
+    //         </div>
+    //         <div className="row column">
+    //           <p className="link-block">Еще не с нами? Тогда <Link to="/signup">Зарегистрируйтесь</Link></p>
+    //         </div>
+    //         <button type="submit" className="button big expanded align-bottom">Войти</button>
+    //       </div>
+    //     </div>
+    //   </Form>
+    // );
   }
 }
 

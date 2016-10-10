@@ -1,16 +1,16 @@
 import { connect } from 'react-redux';
-import PopupActions from '../../actions/popup';
+import AppActions from '../../actions/app';
 import Popup from '../../components/elements/Popup';
 
 const mapStateToProps = ({ app }) => ({ ...app.popup });
 
 const mapDispatchToProps = (dispatch) => ({
   popupShow(data) {
-    dispatch(PopupActions.popupShow(data));
+    dispatch(AppActions.popupShow(data));
   },
 
   popupHide() {
-    dispatch(PopupActions.popupHide());
+    dispatch(AppActions.popupHide());
   },
 });
 

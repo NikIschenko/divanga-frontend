@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {Link} from 'react-router';
+import logoImage from '../../media/images/divanga.png';
 import SearchBar from '../../../search/components/elements/SearchBar';
-import logoImage from '../../media/images/logo@2x.png';
 
 export default class Header extends Component {
 
@@ -10,42 +10,30 @@ export default class Header extends Component {
 
     return (
       <header className={className}>
-        <div className="row large-collapse align-middle">
-          <div className="column small-3">
-            <Link to="/" className="logo">
-              <img src={logoImage} alt="logo"/>
-            </Link>
-            <dl>
-              <dt>Divanga</dt>
-              <dd>Нам важно твое мнение</dd>
-            </dl>
-          </div>
-          <div className="column small-7">
-            <ul className="menu">
-              <li className="menu-link">
-                <Link>
-                  <i className="si si-star"></i>
-                  Топ событий
-                  <ul className="sub-menu">
-                    <li><Link to="/top/3">За 3 дня</Link></li>
-                    <li><Link to="/top/7">За неделю</Link></li>
-                    <li><Link to="/top/30">За месяц</Link></li>
-                    <li><Link to="/top/365">За год</Link></li>
-                    <li><Link to="/top/999">За все время</Link></li>
-                  </ul>
-                </Link>
-              </li>
-              <li>
-                <SearchBar />
-              </li>
-            </ul>
+        <div className="container">
+          <div className="row">
+            <div className="col-xs-2">
+              <Link to="/" className="logo">
+                <img src={logoImage} alt="logo"/>
+              </Link>
+            </div>
+            <div className="col-xs-7">
+              <div className="row">
+                <div className="col-xs-4">
+                  <h4>Divanga <span className="slogan">Нам важно твое мнение</span></h4>
+                </div>
+                <div className="col-xs-8">
+                  <SearchBar />
+                </div>
+              </div>
+            </div>
+            <div className="col-xs-3">
+              <div className="login-signup">
+                <span className="message">Есть аккаунт?</span>
+                  <Link to="/login">Войти</Link>
+                  <Link to="/signup" ><i className="si si-plus"></i><span>Создать</span></Link>
 
-
-          </div>
-          <div className="column">
-            <div className="login-block">
-              <Link to="/login">Войти</Link>
-              <Link to="/signup">Регистрация</Link>
+              </div>
             </div>
           </div>
         </div>

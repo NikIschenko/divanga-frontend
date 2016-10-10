@@ -7,7 +7,7 @@
   border-radius: 5px;
   text-align: center;
   color: $color-gray;
-  background-color: $color-select;
+  background-color: #EEE;
   cursor: text;
   min-width: 320px;
 
@@ -25,7 +25,7 @@
       line-height: 20px;
       height: 20px;
       left: 14px;
-      font-family: $font-icons;
+      font-family: "HBC";
     }
 
     input {
@@ -37,7 +37,7 @@
       outline: none;
       line-height: 1;
       background: none;
-      color: $color-black;
+      color: #222;
     }
   }
 
@@ -51,7 +51,7 @@
 
     &::before {
       content: '\e92c';
-      font-family: $font-icons;
+      font-family: "HBC";
       font-size: $font-size-default;
     }
   }

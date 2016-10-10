@@ -6,5 +6,18 @@ export default class AppActions {
       className
     }
   }
+
+  static popupShow(data) {
+    return {
+      type: 'POPUP_SHOW',
+      data,
+    };
+  }
+
+  static popupHide() {
+    return {
+      type: 'POPUP_HIDE',
+    };
+  }
 }
 

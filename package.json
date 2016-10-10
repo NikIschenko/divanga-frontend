@@ -1,11 +1,9 @@
 {
-  "name": "tulip-gifts",
+  "name": "divanga",
   "version": "0.1.0",
-  "description": "Tulip.io Gift Registry web application",
+  "description": "Divanga",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
-    "jsdoc": "node node_modules/jsdoc/jsdoc.js -d docs -r ./components ./containers ./modules ./actions ./reducers",
     "build": "node_modules/webpack/bin/webpack.js --config webpack.config.prod.js",
     "dev": "node webpack.dev-server.js"
   },
@@ -31,14 +29,7 @@
     "eslint-plugin-react": "^5.2.2",
     "expect": "^1.20.2",
     "file-loader": "^0.8.5",
-    "foundation-sites": "^6.2.3",
     "json-loader": "^0.5.4",
-    "karma": "^1.2.0",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-cli": "^1.0.1",
-    "karma-firefox-launcher": "^1.0.0",
-    "karma-mocha": "^1.1.1",
-    "karma-webpack": "^1.8.0",
     "mocha": "^3.0.2",
     "mocha-webpack": "^0.6.0",
     "node-sass": "^3.7.0",
@@ -56,6 +47,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.9.0",
+    "bootstrap": "^4.0.0-alpha.4",
     "classnames": "^2.2.5",
     "formsy-react": "^0.18.1",
     "json-loader": "^0.5.4",

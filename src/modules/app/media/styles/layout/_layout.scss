@@ -1,61 +1,7 @@
 @import "../base/variables";
 
-.row {
-  max-width: $global-max-width;
-}
-
-main {
-  display: flex;
-  flex: 1;
-}
-
-.page {
-  display: flex;
-  flex-direction: column;
-  background-color: $color-white;
-
-  .page-content {
-    width: 100%;
-    max-width: $global-max-width;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.one-column-layout,
-.two-column-layout {
-  margin: 0 auto;
-
-  .page-content {
-    padding: 25px;
-    position: relative;
-
-  }
-
-  .sidebar-left {
-    border-left: 1px solid $color-border;
-  }
-}
 
 
-.column {
-  min-width: unset;
-}
-
-@media (max-width: $global-max-width - 2) {
-  .one-column-layout,
-  .two-column-layout {
-    .page-content {
-      border: 0;
-    }
-
-    // TODO:
-    .sidebar-left {
-      border-left: 0;
-      border-right: 1px solid $color-border;
-    }
-  }
-}
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 /* PAGE ANIMATION                                                                                                     */

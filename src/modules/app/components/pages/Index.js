@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router';
 import Header from '../elements/Header';
-import TwoColumn from '../layout/TwoColumn';
+import ThreeColumn from '../layout/ThreeColumn';
 
 import { mainData } from '../../data/index';
 import './../../media/styles/index.scss';
-import Api from '../../../../system/Api';
 import { Event } from '../../../event/components/elements/Event';
 import EventActions from '../../../event/actions/event';
 
@@ -30,9 +28,10 @@ export default class Index extends React.Component {
     const { mainItems } = this.props.event;
 
     return (
-      <div className="test">
+      <div>
         <Header />
-        <TwoColumn >
+        <ThreeColumn>
+          <div className="block-header"><h1 className="title">Топ событий</h1></div>
           {
             mainItems.map((item, key) => {
               return (
@@ -40,7 +39,7 @@ export default class Index extends React.Component {
               );
             })
           }
-        </TwoColumn>
+        </ThreeColumn>
       </div>
     );
   }

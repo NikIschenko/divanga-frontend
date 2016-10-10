@@ -84,14 +84,6 @@
   &default {
     font-family: $font-default;
   }
-
-  //&default-narrow {
-  //  font-family: $font-default-narrow;
-  //}
-
-  &lustria {
-    font-family: $font-lustria;
-  }
 }
 
 .text- {
@@ -108,7 +100,7 @@
     color: $color-default
   }
   &black {
-    color: $color-black;
+    color: #222;
   }
 }
 

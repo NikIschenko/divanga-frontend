@@ -1,32 +1,46 @@
-export default [
+export const root = [
   {
-    title: "Лучшее",
-    path: "",
-    children: [
-      {
-        title: "3 дня",
-        path: "",
-      },
-      {
-        title: "Неделю",
-        path: "",
-      },
-      {
-        title: "Месяц",
-        path: "",
-      },
-      {
-        title: "Год",
-        path: "",
-      },
-      {
-        title: "За все время",
-        path: "",
-      },
-    ]
+    title: "Топ событий",
+    path: "/top",
   },
   {
-    title: "Поиск по тегу",
-    url: "",
+    title: "Новинки",
+    path: "/news",
   },
-]
+  {
+    title: "Самое обсуждаемое",
+    path: "/hot",
+  },
+  {
+    title: "Что будет завтра?",
+    path: "/tomorrow",
+  },
+];
+
+export const catalog = [
+  {
+    title: "Cпорт",
+    path: "/sport",
+  },
+  {
+    title: "Политика",
+    path: "/politics",
+  },
+  {
+    title: "Жизнь",
+    path: "/life",
+  },
+  {
+    title: "Технологии",
+    path: "/tech",
+  },
+  {
+    title: "Авто",
+    path: "/auto",
+  },
+  {
+    title: "Бизнес",
+    path: "/business",
+  },
+
+];
