@@ -10,6 +10,7 @@ const Input = React.createClass({
     name: PropTypes.string,
     type: PropTypes.string,
     placeholder: PropTypes.string,
+    className: PropTypes.string,
   },
 
   componentWillMount() {
@@ -59,7 +60,7 @@ const Input = React.createClass({
   },
 
   render() {
-    const { type, name, placeholder, disabled } = this.props;
+    const { type, name, placeholder, disabled, className } = this.props;
 
     return (
       <div className={this.getClassName()}>
@@ -70,6 +71,7 @@ const Input = React.createClass({
           onChange={this.changeValue}
           value={this.getValue()}
           placeholder={placeholder}
+          className={className}
           name={name}
           disabled={disabled}
         />

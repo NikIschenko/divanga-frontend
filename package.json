@@ -72,6 +72,7 @@
     "redux-storage-engine-sessionstorage": "^1.0.2",
     "redux-thunk": "^2.1.0",
     "require-dir-all": "^0.4.9",
+    "simple-line-icons": "^2.4.1",
     "url-join": "^1.1.0",
     "url-loader": "^0.5.7",
     "whatwg-fetch": "^1.0.0"

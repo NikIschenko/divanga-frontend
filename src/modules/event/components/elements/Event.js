@@ -13,58 +13,62 @@ export class Event extends React.Component {
   renderTitle() {
     const {event, route} = this.props;
 
-    if (route) {
-      return (
-        <h3>
-          <dl>
-            <dt><Link to={`/show/${event.id}`}>{event.title}</Link></dt>
-            <dd><i className="avatar" style={{backgroundImage: 'url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png)'}}></i><span>великолепный_дрыщ</span></dd>
-          </dl>
-        </h3>
-      );
-    }
-
-    return (
-      <h3>
-        <dl>
-          <dt>{event.title}</dt>
-          <dd><i className="avatar" style={{backgroundImage: 'url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png)'}}></i><span>пурга911</span></dd>
-        </dl>
-      </h3>
-    );
+    return (route)
+      ? <h3><Link to={`/show/${event.id}`}>{event.title}</Link></h3>
+      : <h3>{event.title}</h3>
   }
 
   render() {
-
     const {event, route, actions} = this.props;
 
+
     return (
-      <div className="event">
+      <div className="card event-card">
+        <div className="card-block">
+          <div className="card-title">
+            {this.renderTitle()}
+          </div>
+          <div className="text" dangerouslySetInnerHTML={{__html: event.previewText}}></div>
+        </div>
+        <div className="card-footer row ">
 
-        {this.renderTitle()}
+          <div className="column col-xs-6">
+            <span className="user">
+              <i className="avatar" style={{backgroundImage: 'url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png)'}}></i>
+              <dl>
+                <dd>{event.userLogin}</dd>
+                <dt className="date">
+                  {moment(event.createDate).startOf('hour').fromNow()}
+                  , в {moment(event.createDate).format('H:MM')}
+                </dt>
+              </dl>
+            </span>
+          </div>
 
-        <div className="text" dangerouslySetInnerHTML={{__html: event.text}}></div>
-        {
-          (!actions)
-            ? null
-            : (
-            <div className="row actions">
-              <div className="column">
-                <dl className="date">
-                  <dt>{ event.createDate}</dt>
-                  <dd>добавлено</dd>
-                </dl>
-              </div>
-              <div className="column text-right">
-                <dl className="views">
-                  <dt><i className="si-eye si"></i>{ event.viewsCount}</dt>
-                  <dd>просмотров</dd>
-                </dl>
-              </div>
-            </div>
-          )
-        }
+          <div className="column col-xs-6">
+            <ul className="nav nav-inline">
+              <li className="nav-item views">
+                <span>
+                  <i className="icon-eye icons"></i>
+                  { event.viewsCount}
+                </span>
+              </li>
+              <li className="nav-item">
+                <div className="like-dislike">
+                  <span>
+                    <i className="icon-like icons"></i>
+                    {event.votes.dislikesCount}
+                  </span>
+                  <span>
+                    <i className="icon-dislike icons"></i>
+                    {event.votes.likesCount}
+                  </span>
+                </div>
+              </li>
+            </ul>
+          </div>
 
+        </div>
       </div>
     );
   }

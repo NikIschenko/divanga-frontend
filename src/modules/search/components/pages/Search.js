@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { Pagination } from 'react-bootstrap';
-import { hashHistory } from 'react-router';
-import OneColumn from '../../../app/components/layout/OneColumn';
+import TreeColumn from '../../../app/components/layout/ThreeColumn';
+import Header     from '../../../app/components/elements/Header';
 import '../../media/styles/index.scss';
 
 export default class Search extends Component {
 
   render() {
     return (
-      <OneColumn>search page
-      </OneColumn>
+      <div>
+        <Header />
+        <TreeColumn>
+          search page
+        </TreeColumn>
+      </div>
     );
   }
 }

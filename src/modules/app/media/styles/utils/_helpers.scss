@@ -72,6 +72,25 @@
   }
 }
 
+.border {
+
+  &-b {
+    border-bottom: 1px solid #EEE;
+  }
+
+  &-l {
+    border-left: 1px solid #EEE;
+  }
+
+  &-t {
+    border-top: 1px solid #EEE;
+  }
+
+  &-r {
+    border-right: 1px solid #EEE;
+  }
+}
+
 .to-upper {
   text-transform: uppercase;
 }

@@ -6,12 +6,13 @@ import { redirectUser } from '../../actions/user';
 import Notify from '../../../app/components/elements/Notify';
 import Input from '../../../app/components/elements/Input';
 import classNames from 'classnames';
+import logoImage from '../../../app/media/images/divanga.png';
 
 class LoginForm extends Component {
 
   static defaultProps = {
     title: "Авторизация",
-    className: "medium-6 auth-form",
+    className: "auth-form",
   };
 
   constructor(props) {
@@ -48,10 +49,19 @@ class LoginForm extends Component {
     const className = classNames('column', this.props.className);
 
     return (
-      <div className="container">
-
-        <div className="flex-items-xs-center row">
-          <div className="col-xs-5">
+      <div className="container-fluid">
+        {
+          (isLoading)
+            ? <ModalMini>Авторизация...</ModalMini>
+            : null
+        }
+        <div className="row flex-items-xs-center">
+          <Link to="/" className="logo">
+            <img src={logoImage} alt="logo"/>
+          </Link>
+        </div>
+        <div className="flex-items-xs-center text-sm-center row">
+          <div className="col-md-7 col-lg-4">
             <div className={className}>
               <Form onValidSubmit={this.onSubmit} method="post">
                 <h4 className="text-center">{title}</h4>
@@ -61,11 +71,11 @@ class LoginForm extends Component {
                     : null
                 }
                 <Input name="username" value={email} placeholder="Ваш логин" />
-                <Input name="password" type="password" placeholder="Ваш пароль" />
-                <div className="row column">
+                <Input name="password" type="password" className="reset-margin" placeholder="Ваш пароль" />
+                <div className="row column text-sm-center">
                   <p className="link-block">Еще не с нами? Тогда <Link to="/signup">Зарегистрируйтесь</Link></p>
                 </div>
-                <button type="submit" className="btn big expanded align-bottom">Войти</button>
+                <button type="submit" className="btn btn-primary">Войти</button>
               </Form>
             </div>
           </div>

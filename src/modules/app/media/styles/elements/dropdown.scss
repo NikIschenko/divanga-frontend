@@ -5,6 +5,40 @@
   display: inline-block;
   position: relative;
 
+  &.open .more {
+    color: #777;
+  }
+
+  .more {
+
+    padding: 15px;
+    border: none;
+    color: #CCC;
+
+    &:hover {
+      color: #777;
+    }
+
+    .caret {
+      font-family: 'simple-line-icons';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+
+      &:before {
+        content: "\e602";
+      }
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
   &.open {
     .dropdown-menu {
       display: block;
@@ -21,15 +55,17 @@
     position: absolute;
     list-style-type: none;
     top: 0;
-    right: 0;
+    left: inherit;
+    right: 1px;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    box-shadow: 0px 10px 15px 3px rgba(0, 0, 0, 0.2);
     z-index: 80;
     margin-top: 50px;
     min-width: 200px;
+    border-radius: 0;
+    border: none;
 
     a {
       margin: 0;
@@ -38,9 +74,9 @@
       display: block;
       position: relative;
       padding: 10px 10px 10px 30px;
-      font-size: 15px;
+      font-size: 13px;
       color: $color-default;
-      border-bottom: 1px solid #DDD;
+      border-bottom: 1px solid #EEE;
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -54,14 +90,22 @@
       }
     }
 
-    &:before {
+    &:before, &:after {
       content: '';
       position: absolute;
-      border-bottom: 12px solid #f4f4f4;
+      border-bottom: 12px solid #EEE;
       border-left: 12px solid transparent;
       border-right: 12px solid transparent;
       right: 4%;
       top: -12px;
+    }
+
+    &:after {
+      border-bottom: 11px solid #FFF;
+      border-left: 11px solid transparent;
+      border-right: 11px solid transparent;
+      top: -11px;
+      right: 9px;
     }
   }
 

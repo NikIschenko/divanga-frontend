@@ -1,126 +1,87 @@
 @import "../base/variables";
 
-
 body {
   background: #fafafa;
 }
 
-.block-header {
-  .title {
-    margin: 0;
-    background: #FFF;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: bold;
-    padding: 15px;
-    margin-top: 15px;
-    margin-bottom: -15px;
-    border-bottom: 1px solid #EEE;
+.block {
+  background: #FFF;
+
+  &-header {
+
+    .title {
+      margin: 0;
+      background: #FFF;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 15px;
+    }
   }
 }
 
-.event {
-  border-radius: 3px;
+.tape {
+  padding: 15px 0 0 0;
+}
+
+.date {
+  font-weight: normal;
+  font-style: italic;
+  color: #989898;
+  font-size: 12px;
+}
+
+.tags-cloud {
   background: #FFF;
-  margin: 15px 0 55px 0;
-  padding: 0;
-  transition: all .25s ease;
-  box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  padding: 1.25rem 1.25rem 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 
-  .avatar {
-    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png);
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    background-size: 30px;
-    margin-right: 10px;
-    float: left;
-    background-repeat: no-repeat;
+  h5 {
+    font-size: 16px;
+    font-weight: 600;
   }
 
-  dl {
-    margin: 0;
+  a {
+    color: #2675c1;
+    margin-right: 7px;
+    font-weight: 600;
 
-    dt,
-    dd {
-      margin: 0;
-    }
-
-    dt {
-      width: 90%;
-    }
-
-    dd {
-      margin: 10px 0 0 0;
-      span {
-        font-size: 12px;
-      }
+    small {
+      display: block;
+      font-size: 12px;
+      color: #777;
+      margin: 0 0 5px 0;
     }
   }
+}
 
-  .predictions {
-    border-top: 1px solid #EEE;
-    padding-top: 20px;
-  }
-
-  .question {
-    margin-top: 20px;
-    padding: 20px 20px 0 20px;
-  }
-
-  .views,
-  .date {
-    margin: 0;
-    color: #888;
-
-    dt {
-      margin: 0;
-      font-weight: normal;
-      width: 100%;
-      line-height: 1;
-      i {
-        font-size: 14px;
-        margin-right: 3px;
-        color: #d8d8d8;
-      }
-    }
-
-    dd {
-      margin: 0;
-      line-height: 1;
-      font-size: 10px;
-      color: #d8d8d8;
-    }
-
-  }
+.event-card,
+.event-card-simple {
+  border-radius: 0;
+  border: none;
+  margin-bottom: 45px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 
   a:not(.button) {
-    border-bottom: 1px solid rgba(4, 125, 202, 0.16);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     color: #047dca;
   }
 
-  &:hover {
-    box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.2);
-  }
+  .card-title {
+    margin-bottom: .5rem;
 
-  h3,
-  .text,
-  .actions {
-    padding: 15px;
-  }
+    h3 {
+      font-size: 16px;
+      margin: 0 0 15px 0;
+      padding-bottom: 0;
+      font-weight: bold;
 
-  .actions {
-    margin: 0 !important;
-    border-top: 1px solid #EEE;
-  }
-
-  h3 {
-    font-size: 16px;
-    margin: 0;
-    padding-bottom: 0;
-    font-weight: bold;
+      a {
+        font-size: 18px;
+      }
+    }
   }
 
   .text {
@@ -132,6 +93,90 @@ body {
     p {
       margin-bottom: 15px;
     }
+  }
+
+  .card-footer {
+    margin: 0;
+    border-radius: 0;
+    background: #FFF;
+    padding: 15px 0;
+
+    .nav {
+      float: right;
+    }
+  }
+
+  .user {
+    .avatar {
+      background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png);
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      background-size: 30px;
+      margin-right: 10px;
+      float: left;
+      background-repeat: no-repeat;
+    }
+
+    dl,
+    dt,
+    dd {
+      margin: 0;
+      line-height: 1;
+    }
+
+    span,
+    dd {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 11px;
+      display: block;
+      padding: 2px 0 4px 0;
+    }
+  }
+
+  .views {
+    border-right: 1px solid #e4e4e4;
+    margin-right: -1rem;
+    padding-right: 1rem;
+    padding: 4px 1rem 4px 0;
+  }
+
+}
+
+.like-dislike,
+.views {
+
+  span {
+    width: 50%;
+    display: inline-block;
+    line-height: 1.6rem;
+    font-size: 10px;
+    color: #888;
+    padding: 0 0 0 15px;
+  }
+
+  .icons {
+    font-size: 16px;
+    margin-right: 5px;
+    color: #AAA;
+    position: relative;
+    top: 3px;
+  }
+}
+
+.event-card-simple {
+  margin-bottom: 0;
+
+  a:not(.button) {
+    font-size: $font-size-default;
+    display: block;
+    line-height: $font-size-default + 4;
+    margin-bottom: .5rem;
+  }
+
+  .date {
+    display: block;
   }
 }
 
@@ -168,42 +213,25 @@ body {
 
   }
 
-
 }
 
 aside {
   margin-top: 15px;
-  border-radius: 3px;
-  background: #FFF;
   padding: 0;
 
-  .event {
-    margin: 0;
-    box-shadow: none !important;
-
-    dt {
-      width: 100%;
-    }
-
-    a:not(.button) {
-      font-size: 14px;
-      font-weight: normal;
-    }
-  }
 }
 
 .caption {
   text-align: right;
-  margin: 30px -15px 0;
+  margin: 30px 0 0;
   font-size: 11px;
   text-transform: uppercase;
   font-weight: bold;
 }
 
-
 .menu {
   clear: both;
-  margin: 15px -15px 0 -15px;
+  margin: 15px 0 0 0;
   padding: 0;
   text-align: right;
 
@@ -222,12 +250,10 @@ aside {
   }
 }
 
-
-.section-title {
-  margin: 0;
-  font-size: 14px;
-  text-transform: uppercase;
-  padding: 15px;
-  border-bottom: 1px solid #EEE;
-  font-weight: bold;
+.nav {
+  .options {
+    margin: 0 !important;
+    float: right;
+    padding: 0;
+  }
 }

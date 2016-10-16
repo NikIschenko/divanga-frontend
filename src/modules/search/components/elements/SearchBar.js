@@ -18,7 +18,7 @@ export default class SearchBar extends Component {
     placeholder: 'Поиск по тегам',
     className: '',
     searchStr: '',
-    searchStrLengthMin: 1,
+    searchStrLengthMin: 3,
     onSubmit: () => null,
     onChange: () => null,
     onCancel: () => null,

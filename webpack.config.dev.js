@@ -4,7 +4,7 @@ var autoprefixer = require('autoprefixer');
 
 var devConfig = {
   devHost: '0.0.0.0',
-  devPort: 3001,
+  devPort: 3002,
   devPublicPath: '/',
 };
 var config = {

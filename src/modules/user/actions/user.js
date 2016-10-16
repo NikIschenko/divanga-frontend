@@ -7,7 +7,6 @@ export const login = (dispatch, profile) => {
   Api
     .sendPost('api/authenticate', profile)
     .then((response) => {
-
     dispatch(UserActions.login(response));
   });
 };

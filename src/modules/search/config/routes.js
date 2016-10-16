@@ -1,8 +1,6 @@
 export default [
   {
-    path: '/catalog/search(/:query)(/:page)',
+    path: '/s(/:query)(/:page)',
     component: './modules/search/containers/pages/Search',
-    transition: 'fade-in',
   },
-
 ];

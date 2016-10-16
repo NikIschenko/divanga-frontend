@@ -1,43 +1,75 @@
-import React from 'react';
-import Header from '../elements/Header';
-import ThreeColumn from '../layout/ThreeColumn';
-
-import { mainData } from '../../data/index';
-import './../../media/styles/index.scss';
-import { Event } from '../../../event/components/elements/Event';
+import React        from 'react';
+import { Link }     from 'react-router';
+import Header       from '../elements/Header';
+import ThreeColumn  from '../layout/ThreeColumn';
+import Api          from '../../../../system/Api';
+import Spinner      from '../../../app/components/elements/Spinner';
+import {Event}    from '../../../event/components/elements/Event';
 import EventActions from '../../../event/actions/event';
+import './../../media/styles/index.scss';
+import {mainData} from '../../data/index'
 
 export default class Index extends React.Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoading: true,
+    }
+  }
+
   componentWillMount() {
-    const { dispatch } = this.props;
+    const {dispatch} = this.props;
+    Api.fetchJSON('api/events/confirmed', {
+      page: 1,
+      size: 20,
+    }).then((response) => {
+      console.log(response);
+      dispatch(EventActions.setMain(response));
+      //dispatch(EventActions.set(response));
+    });
+  }
 
-    // Api.fetchJSON('api/events', {
-    //   page: 1,
-    //   size: 20,
-    // }).then((response) => {
-    //   dispatch(EventActions.set(response));
-    // });
-
-    const response = mainData;
-    dispatch(EventActions.setMain(response))
+  componentWillUpdate(nextProps) {
+    if (nextProps.event.mainItems !== this.props.event.mainItems) {
+      this.state.isLoading = false;
+    }
   }
 
   render() {
 
-    const { mainItems } = this.props.event;
+    var {mainItems} = this.props.event;
+    const {isLoading} = this.state;
+
+    mainItems = mainItems.concat(mainData);
 
     return (
       <div>
         <Header />
         <ThreeColumn>
-          <div className="block-header"><h1 className="title">Топ событий</h1></div>
           {
-            mainItems.map((item, key) => {
+            (() => {
+              if (isLoading) {
+                return <Spinner />;
+              }
               return (
-                <Event route={true} key={key} event={item} />
+                <div>
+                  <div className="block-header border-b">
+                    <h1 className="title">Лента последних новостей</h1>
+                  </div>
+                  <div className="block-content">
+                    {
+                      mainItems.map((item, key) => {
+                        return (
+                          <Event route={true} key={key} event={item}/>
+                        );
+                      })
+                    }
+                  </div>
+                </div>
               );
-            })
+            })()
           }
         </ThreeColumn>
       </div>

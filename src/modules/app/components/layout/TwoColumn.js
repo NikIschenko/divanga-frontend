@@ -1,22 +1,35 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router';
+import { root, catalog } from '../../config/menu';
 import classNames from 'classnames';
-import Sidebar from '../../containers/layout/Sidebar';
+import Menu from '../elements/Menu';
 
 export default class TwoColumn extends Component {
 
   render() {
-    const { sidebar, children, className } = this.props;
-    const layoutClass = classNames('two-column-layout', className);
+    const { children, className } = this.props;
+    const layoutClass = classNames('layout-2', 'container', className);
 
     return (
-      <div className={layoutClass}>
-        <main className="row collapse layout">
-          <div className="column medium-8 page-content">{children}</div>
-          <div className="column medium-4">
-            <Sidebar />
+      <main className={layoutClass}>
+        <div className="row">
+          <div className="col-md-2">
+            <Menu className="offset">
+              {root}
+            </Menu>
+            <p className="caption">Популярное<br/>по тегам</p>
+            <Menu>
+              {catalog}
+            </Menu>
+            <p className="caption">
+              <Link activeClassName="active" to="/about">Помощь</Link>
+            </p>
           </div>
-        </main>
-      </div>
+          <div className="col-xs col-md-10 tape">
+            {children}
+          </div>
+        </div>
+      </main>
     );
   }
 }
