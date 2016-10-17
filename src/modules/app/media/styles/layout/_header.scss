@@ -20,6 +20,30 @@
   }
 }
 
+.user-profile {
+  margin: 15px 0 0 0;
+  float: right;
+  min-width: 120px;
+  padding: 10px;
+
+  a {
+    color: #3075c5;
+    font-weight: bold;
+  }
+
+  .avatar {
+    background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/disp/ce54bf11889067.562541ef7cde4.png);
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    background-size: 30px;
+    margin-right: 10px;
+    margin-top: -5px;
+    float: left;
+    background-repeat: no-repeat;
+  }
+}
+
 header {
   height: 60px;
 

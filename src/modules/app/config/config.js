@@ -14,7 +14,7 @@ export default {
    * @default false
    * Set as true, if you want that your app save redux actions
    */
-  storage: true,
+  storage: false,
 
   /**
    * @var string|boolean {indexRoute}

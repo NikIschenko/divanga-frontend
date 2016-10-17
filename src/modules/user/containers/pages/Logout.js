@@ -10,9 +10,7 @@ function mapStateToProps({ user }) {
 function mapDispatchToProps(dispatch) {
   return {
     logout: () => {
-      Api.fetchJSON('/api/auth/logout', false).then(() => {
-        dispatch(UserActions.logout());
-      });
+      dispatch(UserActions.logout());;
     },
   };
 }

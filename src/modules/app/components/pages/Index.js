@@ -1,13 +1,11 @@
 import React        from 'react';
-import { Link }     from 'react-router';
-import Header       from '../elements/Header';
 import ThreeColumn  from '../layout/ThreeColumn';
 import Api          from '../../../../system/Api';
 import Spinner      from '../../../app/components/elements/Spinner';
-import {Event}    from '../../../event/components/elements/Event';
+import { Event }    from '../../../event/components/elements/Event';
 import EventActions from '../../../event/actions/event';
 import './../../media/styles/index.scss';
-import {mainData} from '../../data/index'
+import { mainData } from '../../data/index'
 
 export default class Index extends React.Component {
 
@@ -45,34 +43,31 @@ export default class Index extends React.Component {
     mainItems = mainItems.concat(mainData);
 
     return (
-      <div>
-        <Header />
-        <ThreeColumn>
-          {
-            (() => {
-              if (isLoading) {
-                return <Spinner />;
-              }
-              return (
-                <div>
-                  <div className="block-header border-b">
-                    <h1 className="title">Лента последних новостей</h1>
-                  </div>
-                  <div className="block-content">
-                    {
-                      mainItems.map((item, key) => {
-                        return (
-                          <Event route={true} key={key} event={item}/>
-                        );
-                      })
-                    }
-                  </div>
+      <ThreeColumn>
+        {
+          (() => {
+            if (isLoading) {
+              return <Spinner />;
+            }
+            return (
+              <div>
+                <div className="block-header border-b">
+                  <h1 className="title">Лента последних новостей</h1>
                 </div>
-              );
-            })()
-          }
-        </ThreeColumn>
-      </div>
+                <div className="block-content">
+                  {
+                    mainItems.map((item, key) => {
+                      return (
+                        <Event route={true} key={key} event={item}/>
+                      );
+                    })
+                  }
+                </div>
+              </div>
+            );
+          })()
+        }
+      </ThreeColumn>
     );
   }
 }

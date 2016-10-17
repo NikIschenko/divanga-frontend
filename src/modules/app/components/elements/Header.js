@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Link }  from 'react-router';
+import User      from '../../../user/service/User';
 import Service   from '../../../../system/Service';
 import logoImage from '../../media/images/divanga.png';
 import SearchBar from '../../../search/components/elements/SearchBar';
@@ -15,7 +16,7 @@ export default class Header extends Component {
   };
 
   render() {
-    const { className } = this.props;
+    const { className, user } = this.props;
     const searchBarProps = {
       onSubmit: this.onSearch,
       onCancel: this.onCancel,
@@ -41,12 +42,28 @@ export default class Header extends Component {
               </div>
             </div>
             <div className="col-xs-3">
-              <div className="login-signup">
-                <span className="message">Есть аккаунт?</span>
-                  <Link to="/login">Войти</Link>
-                  <Link to="/signup" ><i className="si si-plus"></i><span>Создать</span></Link>
+              {
+                ((user) => {
+                  if (user) {
+                    return (
+                      <div className="user-profile">
+                        <Link to="/">
+                          <i className="avatar"></i>
+                          {user.login}
+                        </Link>
+                      </div>
+                    );
+                  }
 
-              </div>
+                  return (
+                    <div className="login-signup">
+                      <span className="message">Есть аккаунт?</span>
+                      <Link to="/login">Войти</Link>
+                      <Link to="/signup" ><i className="si si-plus"></i><span>Создать</span></Link>
+                    </div>
+                  );
+                })(user.current)
+              }
             </div>
           </div>
         </div>

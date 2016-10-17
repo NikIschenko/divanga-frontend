@@ -1,14 +1,18 @@
 import Api from '../../../system/Api';
 import Service from '../../../system/Service';
+import User from '../service/User';
 
 export const login = (dispatch, profile) => {
 
-
-  Api
-    .sendPost('api/authenticate', profile)
+  User
+    .login(profile)
     .then((response) => {
-    dispatch(UserActions.login(response));
-  });
+      dispatch(UserActions.login(response));
+    })
+    .catch((error) => {
+      // TODO: Set from error;
+      console.log(error);
+    });
 };
 
 export const signUp = (dispatch, profile) => {
@@ -23,17 +27,6 @@ export const signUp = (dispatch, profile) => {
     dispatch(UserActions.signup(response));
   });
 
-};
-
-export const redirectUser = (user) => {
-
-  if (user) {
-    const location = (user.registry.length === 0)
-      ? '/create-registry'
-      : '/my';
-
-    Service.redirect(location);
-  }
 };
 
 export default class UserActions {

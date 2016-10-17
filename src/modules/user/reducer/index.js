@@ -1,10 +1,6 @@
 const initialState = {
   current: null,
-  formError: null,
-  renderFlag: false,
-  formValues: {
-    email: '',
-  },
+  errors: [],
 };
 
 export default (state = initialState, action) => {
@@ -13,8 +9,7 @@ export default (state = initialState, action) => {
     case "INIT":
     {
       const result = {
-        formValues: null,
-        formError: null,
+        errors: [],
       };
       return { ...state, ...result };
     }
@@ -23,19 +18,9 @@ export default (state = initialState, action) => {
     {
       const { response } = action;
       const result = {
-        current: null,
-        formError: null,
+        current: response,
+        errors: [],
       };
-
-      if (response.user) {
-        result.current = response.id_token;
-      }
-
-      if (response.error) {
-        result.formError = response.error;
-      }
-
-      result.renderFlag = !state.renderFlag;
 
       return { ...state, ...result };
     }
@@ -43,12 +28,6 @@ export default (state = initialState, action) => {
     {
       return { ...state, current: null };
     }
-
-    case "FILL_PASSWORD":
-    {
-      return { ...state, formValues: action.params };
-    }
-
     default:
     {
       return state;

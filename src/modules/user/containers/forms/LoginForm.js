@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import UserActions, { login } from '../../actions/user';
 import component from '../../components/forms/LoginForm';
 
-const mapStateToProps = ({ user }) => ({ ...user });
+const mapStateToProps = ({ user }) => ({ user });
 
 const mapDispatchToProps = (dispatch) => ({
   init: () => {

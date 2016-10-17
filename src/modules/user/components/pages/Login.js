@@ -10,11 +10,9 @@ class Login extends React.Component {
   };
 
   render() {
-    const { location } = this.props;
-
     return (
       <div className="simple-form-page">
-        <LoginForm email={location.query.email} />
+        <LoginForm />
       </div>
     );
   }
