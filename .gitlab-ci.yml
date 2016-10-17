@@ -29,6 +29,7 @@ deploy_job:
   script:   
   - ssh gitlab-ci@40.68.243.107 "rm -rf ~/front/*"
   - scp front.tar.gz gitlab-ci@40.68.243.107:~/front
+  - ssh gitlab-ci@40.68.243.107 "rm -rf ~/dist/*"
   - ssh gitlab-ci@40.68.243.107 "tar -zxvf ~/front/front.tar.gz"
 
   dependencies:   
