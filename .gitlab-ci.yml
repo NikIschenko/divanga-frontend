@@ -6,7 +6,7 @@ stages:
 
 build_job:
   stage: build
-  script: 'npm install && npm run build && tar -czvf front.tar.gz /dist'
+  script: 'npm install && npm run build && tar -czvf front.tar.gz dist'
   artifacts:
     paths:
     - front.tar.gz
