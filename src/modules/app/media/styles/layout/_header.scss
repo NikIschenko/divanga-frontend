@@ -7,8 +7,8 @@
   text-align: center;
   display: block;
   float: right;
-  width: 80px;
-  height: 80px;
+  max-width: 80px;
+  max-height: 80px;
   background: #4bbfe4;
   margin: 15px 0 0 0;
   border-radius: 99px;
@@ -25,6 +25,18 @@
   float: right;
   min-width: 120px;
   padding: 10px;
+
+  @include mobile {
+    padding: 0;
+
+    a {
+      display: none;
+    }
+
+    .nav {
+      float: right;
+    }
+  }
 
   a {
     color: #3075c5;
@@ -45,7 +57,18 @@
 }
 
 header {
-  height: 60px;
+
+  @include mobile {
+    border-bottom: 1px solid #EEE;
+    background: #FFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding-bottom: 10px;
+  }
+
+  @include tablet {
+    height: 60px;
+  }
+
 
   h4 {
     font-weight: bold;
@@ -77,4 +100,13 @@ header {
     }
   }
 
+}
+
+.container {
+
+  max-width: 1200px;
+
+  > .row {
+    margin: 0;
+  }
 }

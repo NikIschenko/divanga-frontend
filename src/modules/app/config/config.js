@@ -1,6 +1,7 @@
 import { hashHistory, browserHistory } from 'react-router';
-import Page404 from '../components/pages/Page404';
-import IndexPage from '../containers/pages/Index';
+import RightSidebar from '../containers/layout/RightSidebar';
+import Page404      from '../components/pages/Page404';
+import IndexPage    from '../containers/pages/Index';
 
 export default {
 
@@ -14,7 +15,7 @@ export default {
    * @default false
    * Set as true, if you want that your app save redux actions
    */
-  storage: false,
+  storage: true,
 
   /**
    * @var string|boolean {indexRoute}
@@ -42,7 +43,7 @@ export default {
    * @default "*"
    * List of allowed roles, that can view pages by default
    */
-  routePermission: "*",
+  routePermission: "ROLE_READER",
   userField: 'current',
 
   /**
@@ -62,5 +63,7 @@ export default {
    * @var array of React component {globalComponents}
    * List of react components that was added into global template
    */
-  globalComponents: [],
+  globalComponents: [
+    RightSidebar,
+  ],
 };

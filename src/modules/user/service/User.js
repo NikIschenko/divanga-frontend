@@ -19,7 +19,10 @@ export default class User {
       Api
         .setToken(token, Api.TOKEN_TYPE)
         .fetchJSON('api/users/' + login)
-        .then(resolve)
+        .then((response) => {
+          response.token = token;
+          resolve(response);
+        })
         .catch(reject);
     });
   }

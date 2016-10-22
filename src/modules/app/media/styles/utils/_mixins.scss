@@ -1,6 +1,18 @@
 @import "../base/variables";
 
+@mixin mobile {
+  @media (max-width: 543px) {
+    @content;
+  }
+}
+
 @mixin tablet {
+  @media (min-width: 544px) {
+    @content;
+  }
+}
+
+@mixin wide-tablet {
   @media (max-width: map-get($breakpoints, "medium") - 1) {
     @content;
   }

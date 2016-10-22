@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import { Link }  from 'react-router';
-import User      from '../../../user/service/User';
-import Service   from '../../../../system/Service';
-import logoImage from '../../media/images/divanga.png';
-import SearchBar from '../../../search/components/elements/SearchBar';
+import { Link }   from 'react-router';
+import User       from '../../../user/service/User';
+import AppActions from '../../actions/app';
+import Service    from '../../../../system/Service';
+import logoImage  from '../../media/images/divanga.png';
+import SearchBar  from '../../../search/components/elements/SearchBar';
 
 export default class Header extends Component {
 
@@ -16,10 +17,11 @@ export default class Header extends Component {
   };
 
   render() {
-    const { className, user } = this.props;
+    const { className, user, dispatch } = this.props;
     const searchBarProps = {
       onSubmit: this.onSearch,
       onCancel: this.onCancel,
+      className: 'hidden-xs-down',
     };
 
     return (
@@ -31,7 +33,7 @@ export default class Header extends Component {
                 <img src={logoImage} alt="logo"/>
               </Link>
             </div>
-            <div className="col-md-7 tape">
+            <div className="col-md-7 tape hidden-sm-down">
               <div className="row">
                 <div className="col-xs-4">
                   <h4>Divanga <span className="slogan">Нам важно твое мнение</span></h4>
@@ -41,7 +43,7 @@ export default class Header extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-xs-3">
+            <div className="col-xs-10 col-md-3">
               {
                 ((user) => {
                   if (user) {
@@ -51,6 +53,7 @@ export default class Header extends Component {
                           <i className="avatar"></i>
                           {user.login}
                         </Link>
+                        <span className="nav hidden-md-up" onClick={() => dispatch(AppActions.toggleSidebar('open'))}><i className="hbc-menu"></i></span>
                       </div>
                     );
                   }
@@ -59,7 +62,8 @@ export default class Header extends Component {
                     <div className="login-signup">
                       <span className="message">Есть аккаунт?</span>
                       <Link to="/login">Войти</Link>
-                      <Link to="/signup" ><i className="si si-plus"></i><span>Создать</span></Link>
+                      <Link className="btn-signup" to="/signup" ><i className="si si-plus"></i><span>Создать</span></Link>
+                      <span className="nav" onClick={() => dispatch(AppActions.toggleSidebar('open'))}><i className="hbc-menu"></i></span>
                     </div>
                   );
                 })(user.current)

@@ -9,7 +9,7 @@ var devConfig = {
 };
 var config = {
   debug: true,
-  devtool: '#cheap-module-eval-source-map',
+  devtool: 'source-map',
   entry: [
     'webpack-dev-server/client?http://' + devConfig.devHost + ':' + devConfig.devPort,
     'webpack/hot/only-dev-server',

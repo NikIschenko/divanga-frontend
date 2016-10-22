@@ -44,6 +44,15 @@
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
+.nav {
+  i {
+    margin-left: 15px;
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+  }
+}
+
 .login-signup {
   margin: 20px 0 0 0;
   text-align: right;
@@ -69,7 +78,7 @@
       font-weight: 400;
     }
 
-    &:last-child {
+    &.btn-signup {
       background: #2675c1;
       padding: 3px 4px;
       line-height: 1;

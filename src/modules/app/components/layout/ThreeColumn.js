@@ -17,7 +17,7 @@ export default class ThreeColumn extends Component {
         <Header />
         <main className={layoutClass}>
           <div className="row">
-            <div className="col-md-2">
+            <div className="col-md-2 hidden-sm-down">
               <Menu className="offset">
                 {root}
               </Menu>

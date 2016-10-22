@@ -19,7 +19,8 @@ export default class User {
   }
 
   isLogin() {
-    return (this.getRole() !== Config.routePermission);
+    console.log(this.getProperty('token'));
+    return (this.getProperty('token'));
   }
 
   getProperty(type) {
@@ -31,8 +32,8 @@ export default class User {
 
   getRole() {
 
-    return (this.hasOwnProperty('role'))
-      ? this.role
-      : Config.routePermission;
+    return (this.hasOwnProperty('authorities'))
+      ? this.authorities
+      : false;
   }
 }
