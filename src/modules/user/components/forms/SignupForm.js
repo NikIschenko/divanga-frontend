@@ -1,21 +1,20 @@
 import React, {PropTypes, Component} from 'react';
-import className from 'classnames';
-import {Link} from 'react-router';
-import {Form} from 'formsy-react';
-import ModalMini from '../common/ModalMini';
-import {redirectUser} from '../../actions/user';
-import Notify from '../../../app/components/elements/Notify';
-import Input from '../../../app/components/elements/Input';
-import logoImage from '../../../app/media/images/divanga.png';
+import {Link}           from 'react-router';
+import {Form}           from 'formsy-react';
+import ModalMini        from '../common/ModalMini';
+import { redirectUser } from '../../actions/user';
+import Notify           from '../../../app/components/elements/Notify';
+import Input            from '../../../app/components/elements/Input';
+import logoImage        from '../../../app/media/images/divanga.png';
 
 class SignupForm extends Component {
 
   static propTypes = {
-    handleSubmit: PropTypes.func,
+    init:             PropTypes.func,
+    email:            PropTypes.string,
+    formValues:       PropTypes.object,
+    handleSubmit:     PropTypes.func,
     submitSignUpForm: PropTypes.func,
-    init: PropTypes.func,
-    formValues: PropTypes.object,
-    email: PropTypes.string,
   };
 
   constructor(props) {
@@ -23,41 +22,40 @@ class SignupForm extends Component {
 
     this.state = {
       isLoading: false,
-      email: null,
-      password: null,
+      email:     null,
+      password:  null,
     };
   }
 
   componentWillMount() {
-    const {email} = this.props;
+    const { email }  = this.props;
     this.state.email = email;
   }
 
   componentDidMount() {
     this.props.init();
-    redirectUser(this.props.current);
+    //redirectUser(this.props.current);
   }
 
   componentWillUpdate(nextProps) {
 
     this.state.isLoading = false;
 
-    const {formValues, formError} = nextProps;
+    const { formValues, formError } = nextProps;
     if (formValues && formError === null) {
-      const {password} = this.refs.form.getModel();
-      this.state.email = formValues.email;
+      const { password }  = this.refs.form.getModel();
+      this.state.email    = formValues.email;
       this.state.password = password;
     }
 
-    redirectUser(nextProps.current);
   }
 
   onSubmit = (data) => {
 
-    const {formValues} = this.props;
-    const result = {...formValues, ...data};
+    const { formValues } = this.props;
+    const result = { ...formValues, ...data };
 
-    this.setState({isLoading: true});
+    this.setState({ isLoading: true });
     this.props.submitSignUpForm(result);
   };
 
@@ -95,37 +93,7 @@ class SignupForm extends Component {
                     : null
                 }
                 <div className="row">
-                  <div className="col-lg">
-                    <Input
-                      name="firstName"
-                      type="text"
-                      placeholder="Ваше имя"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-lg">
-                    <Input
-                      name="lastName"
-                      type="text"
-                      placeholder="Фамилия"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-lg">
-                    <Input
-                      name="login"
-                      type="text"
-                      placeholder="Придумайте ваш логин"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-lg">
+                  <div className="col-xs">
                     <Input
                       name="email"
                       type="text"
@@ -135,7 +103,37 @@ class SignupForm extends Component {
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col-lg">
+                  <div className="col-xs">
+                    <Input
+                      name="login"
+                      type="text"
+                      placeholder="Придумайте ваш логин"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-xs">
+                    <Input
+                      name="firstName"
+                      type="text"
+                      placeholder="Ваше имя"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-xs">
+                    <Input
+                      name="lastName"
+                      type="text"
+                      placeholder="Фамилия"
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-xs">
                     <Input
                       name="password"
                       type="password"
@@ -149,10 +147,11 @@ class SignupForm extends Component {
                   </div>
                 </div>
                 <p className="link-block">Уже зарегистрированы? <Link to="/login">Войдите</Link></p>
-
-                <button type="submit" className="btn btn-primary">
-                  Зарегистрироваться
-                </button>
+                <div className="text-xs-center">
+                  <button type="submit" className="btn btn-primary">
+                    Зарегистрироваться
+                  </button>
+                </div>
               </Form>
             </div>
           </div>

@@ -1,3 +1,5 @@
+@import "../../../../app/media/styles/utils/mixins";
+
 .login,
 .signup,
 .simple-form-page {
@@ -42,6 +44,14 @@
   padding: 1.25rem 3.75rem 2.5rem;
   border-radius: 3px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+
+  @include mobile {
+    padding: 1.25rem 1.75rem 2.5rem;
+  }
+
+  .btn {
+    margin: auto;
+  }
 }
 
 .nav {

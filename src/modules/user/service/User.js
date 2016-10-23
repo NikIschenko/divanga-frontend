@@ -13,6 +13,15 @@ export default class User {
         });
     });
   }
+  
+  static signup(profile) {
+    return new Promise((resolve, reject) => {
+      Api
+        .sendPost('api/users', profile)
+        .then(resolve)
+        .catch(reject);
+    });
+  }
 
   static getProfile(token, login) {
     return new Promise((resolve, reject) => {

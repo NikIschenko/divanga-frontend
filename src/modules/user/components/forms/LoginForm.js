@@ -15,6 +15,15 @@ class LoginForm extends Component {
     className: "auth-form",
   };
 
+  static messages = {
+    loading: 'Авторизация...',
+    signup: 'Зарегистрируйтесь',
+    login: 'Войти',
+    loginPlaceholder: 'Ваш логин',
+    passPlaceholder: 'Ваш пароль',
+    notForUs: 'Еще не снами? Тогда',
+  }
+
   constructor(props) {
     super(props);
 
@@ -48,7 +57,7 @@ class LoginForm extends Component {
       <div className="container-fluid">
         {
           (isLoading)
-            ? <ModalMini>Авторизация...</ModalMini>
+            ? <ModalMini>{Login.messages.loading}</ModalMini>
             : null
         }
         <div className="row flex-items-xs-center">
@@ -66,12 +75,13 @@ class LoginForm extends Component {
                     ? <Notify type="error">{((error) => error)}</Notify>
                     : null
                 }
-                <Input name="username" placeholder="Ваш логин" />
-                <Input name="password" type="password" className="reset-margin" placeholder="Ваш пароль" />
+                <Input name="username" placeholder={LoginForm.messages.loginPlaceholder} />
+                <Input name="password" type="password" className="reset-margin" placeholder={LoginForm.messages.passPlaceholder} />
                 <div className="row column text-sm-center">
-                  <p className="link-block">Еще не с нами? Тогда <Link to="/signup">Зарегистрируйтесь</Link></p>
+                  <p className="link-block">{LoginForm.messages.notForUs} <Link to="/signup">{LoginForm.messages.signup}</Link></p>
+                  <button type="submit" className="btn btn-primary">{LoginForm.messages.login}</button>
                 </div>
-                <button type="submit" className="btn btn-primary">Войти</button>
+
               </Form>
             </div>
           </div>

@@ -10,8 +10,7 @@ export const login = (dispatch, profile) => {
       dispatch(UserActions.login(response));
     })
     .catch((error) => {
-      // TODO: Set from error;
-      console.log(error);
+      console.log(error); // TODO: Set from error;
     });
 };
 
@@ -19,13 +18,14 @@ export const signUp = (dispatch, profile) => {
 
   dispatch(UserActions.init());
 
-  if (profile.password === '') {
-    return dispatch(UserActions.fillPassword(profile));
-  }
+  User
+    .signup(profile)
+    .then((response) => {
+      console.log('test');
+      console.log(response);
 
-  Api.sendPost('api/users', profile).then((response) => {
-    dispatch(UserActions.signup(response));
-  });
+      //dispatch()
+    });
 
 };
 
