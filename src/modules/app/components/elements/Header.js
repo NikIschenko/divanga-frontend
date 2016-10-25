@@ -63,7 +63,7 @@ export default class Header extends Component {
                       <span className="message">Есть аккаунт?</span>
                       <Link to="/login">Войти</Link>
                       <Link className="btn-signup" to="/signup" ><i className="si si-plus"></i><span>Создать</span></Link>
-                      <span className="nav" onClick={() => dispatch(AppActions.toggleSidebar('open'))}><i className="hbc-menu"></i></span>
+                      <span className="nav hidden-md-up" onClick={() => dispatch(AppActions.toggleSidebar('open'))}><i className="hbc-menu"></i></span>
                     </div>
                   );
                 })(user.current)

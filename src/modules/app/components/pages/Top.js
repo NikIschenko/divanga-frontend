@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Header from '../elements/Header';
+import Header from '../../containers/elements/Header';
 import TwoColumn from '../layout/TwoColumn';
 
 import './../../media/styles/index.scss';

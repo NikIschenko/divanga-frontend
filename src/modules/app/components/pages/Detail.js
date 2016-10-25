@@ -1,9 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router';
-import Header from '../elements/Header';
+import Header from '../../containers/elements/Header';
 import TwoColumn from '../layout/TwoColumn';
-
-
 
 import {mainData, questions, comments } from '../../data/index';
 import './../../media/styles/index.scss';
