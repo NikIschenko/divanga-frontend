@@ -139,7 +139,7 @@ class SignupForm extends Component {
                       type="password"
                       value={password}
                       className="reset-margin"
-                      placeholder="Придумате пароль"
+                      placeholder="Придумайте пароль"
                       validations="minLength:6"
                       validationError="Минимальная длина пароля 6 символов"
                       required
