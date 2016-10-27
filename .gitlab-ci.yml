@@ -1,4 +1,4 @@
-image: node:6.3
+image:  mhart/alpine-node:6
 
 cache:
   untracked: true
