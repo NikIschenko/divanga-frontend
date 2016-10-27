@@ -12,7 +12,7 @@ stages:
 
 build_job:
   stage: build
-  script: 'npm r acorn && npm install && npm run build && tar -czvf front.tar.gz dist'
+  script: 'npm prune && npm install && npm run build && tar -czvf front.tar.gz dist'
   artifacts:
     paths:
     - front.tar.gz
