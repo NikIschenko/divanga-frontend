@@ -1,3 +1,36 @@
-job2:
-  image: node
-  script: 'npm install && npm run dev'
+image: node:6.3
+
+cache:
+  untracked: true
+  key: "$CI_BUILD_REF_NAME"
+  paths:
+    - node_modules/
+
+stages:
+  - build
+  - deploy
+
+build_job:
+  stage: build
+  script: 'npm install && npm run build && tar -czvf front.tar.gz dist'
+  artifacts:
+    paths:
+    - front.tar.gz
+    
+deploy_job:
+  stage: deploy
+  environment: test
+  before_script:   
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'   
+  - eval $(ssh-agent -s)   
+  - ssh-add <(echo "$SSH_PRIVATE_KEY")   
+  - mkdir -p ~/.ssh   
+  - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config   
+  script:   
+  - ssh gitlab-ci@40.68.243.107 "rm -rf ~/front/*"
+  - scp front.tar.gz gitlab-ci@40.68.243.107:~/front
+  - ssh gitlab-ci@40.68.243.107 "rm -rf ~/dist/*"
+  - ssh gitlab-ci@40.68.243.107 "tar -zxvf ~/front/front.tar.gz"
+
+  dependencies:   
+  - build_job
