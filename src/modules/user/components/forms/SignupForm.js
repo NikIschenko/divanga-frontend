@@ -27,6 +27,20 @@ class SignupForm extends Component {
     };
   }
 
+  static messages = {
+    login:                'Войдите',
+    signup:               'Зарегистрироваться',
+    loading:              'Регистрация...',
+    title:                'Регистрация',
+    emailPlaceholder:     'Ваш email',
+    loginPlaceholder:     'Придумайте ваш логин',
+    passPlaceholder:      'Придумайте пароль',
+    minPasswordLength:    'Минимальная длина пароля 6 символов',
+    lastNamePlaceholder:  'Фамилия',
+    firstNamePlaceholder: 'Ваше имя',
+    alreadyForUs:         'Уже зарегистрированы? ',
+  }
+
   componentWillMount() {
     const { email }  = this.props;
     this.state.email = email;
@@ -69,7 +83,7 @@ class SignupForm extends Component {
       <div className="container-fluid">
         {
           (isLoading)
-            ? <ModalMini>Регистрация...</ModalMini>
+            ? <ModalMini>{SignupForm.message.loading}</ModalMini>
             : null
         }
         <div className="row flex-items-xs-center">
@@ -81,7 +95,7 @@ class SignupForm extends Component {
           <div className="col-md-7 col-lg-4">
             <div className={className}>
               <Form onValidSubmit={this.onSubmit} ref="form" method="post">
-                <h4 className="text-center">Регистрация</h4>
+                <h4 className="text-center">{SignupForm.messages.title}</h4>
                 {
                   (formError && typeof(formError) === "object")
                     ? formError.map((error, key) => (<Notify key={key} type="error">{error}</Notify>))
@@ -97,7 +111,7 @@ class SignupForm extends Component {
                     <Input
                       name="email"
                       type="text"
-                      placeholder="Ваш email"
+                      placeholder={SignupForm.messages.emailPlaceholder}
                       required
                     />
                   </div>
@@ -107,7 +121,7 @@ class SignupForm extends Component {
                     <Input
                       name="login"
                       type="text"
-                      placeholder="Придумайте ваш логин"
+                      placeholder={SignupForm.messages.loginPlaceholder}
                       required
                     />
                   </div>
@@ -117,7 +131,7 @@ class SignupForm extends Component {
                     <Input
                       name="firstName"
                       type="text"
-                      placeholder="Ваше имя"
+                      placeholder={SignupForm.messages.firstNamePlaceholder}
                       required
                     />
                   </div>
@@ -127,7 +141,7 @@ class SignupForm extends Component {
                     <Input
                       name="lastName"
                       type="text"
-                      placeholder="Фамилия"
+                      placeholder={SignupForm.messages.lastNamePlaceholder}
                       required
                     />
                   </div>
@@ -139,17 +153,17 @@ class SignupForm extends Component {
                       type="password"
                       value={password}
                       className="reset-margin"
-                      placeholder="Придумайте пароль"
+                      placeholder={SignupForm.messages.passPlaceholder}
                       validations="minLength:6"
-                      validationError="Минимальная длина пароля 6 символов"
+                      validationError={SignupForm.messages.minPasswordLength}
                       required
                     />
                   </div>
                 </div>
-                <p className="link-block">Уже зарегистрированы? <Link to="/login">Войдите</Link></p>
+                <p className="link-block">{SignupForm.messages.alreadyForUs} <Link to="/login">{SignupForm.messages.login}</Link></p>
                 <div className="text-xs-center">
                   <button type="submit" className="btn btn-primary">
-                    Зарегистрироваться
+                    {SignupForm.messages.signup}
                   </button>
                 </div>
               </Form>

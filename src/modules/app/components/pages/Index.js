@@ -40,8 +40,6 @@ export default class Index extends React.Component {
     var {mainItems} = this.props.event;
     const {isLoading} = this.state;
 
-    mainItems = mainItems.concat(mainData);
-
     return (
       <ThreeColumn>
         {
