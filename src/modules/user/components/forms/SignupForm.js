@@ -1,13 +1,17 @@
 import React, {PropTypes, Component} from 'react';
-import {Link}           from 'react-router';
-import {Form}           from 'formsy-react';
+import { connect }      from 'react-redux';
+import { Link }         from 'react-router';
+import { Form }         from 'formsy-react';
 import ModalMini        from '../common/ModalMini';
 import { redirectUser } from '../../actions/user';
 import Notify           from '../../../app/components/elements/Notify';
 import Input            from '../../../app/components/elements/Input';
 import logoImage        from '../../../app/media/images/divanga.png';
+import User             from '../../service/User';
+import Service          from '../../../../system/Service';
+import UserActions      from '../../actions/user';
 
-class SignupForm extends Component {
+export class SignupForm extends Component {
 
   static propTypes = {
     init:             PropTypes.func,
@@ -42,21 +46,18 @@ class SignupForm extends Component {
   }
 
   componentWillMount() {
-    const { email }  = this.props;
+    const { email, dispatch }  = this.props;
     this.state.email = email;
+    dispatch(UserActions.setErrors([]))
   }
 
-  componentDidMount() {
-    this.props.init();
-    //redirectUser(this.props.current);
-  }
 
   componentWillUpdate(nextProps) {
 
     this.state.isLoading = false;
 
-    const { formValues, formError } = nextProps;
-    if (formValues && formError === null) {
+    const { formValues, errors } = nextProps;
+    if (formValues && errors === null) {
       const { password }  = this.refs.form.getModel();
       this.state.email    = formValues.email;
       this.state.password = password;
@@ -64,17 +65,31 @@ class SignupForm extends Component {
 
   }
 
-  onSubmit = (data) => {
+  onSubmit = (formData) => {
 
-    const { formValues } = this.props;
-    const result = { ...formValues, ...data };
+    const { formValues, dispatch } = this.props;
+    const result = { ...formValues, ...formData };
 
     this.setState({ isLoading: true });
-    this.props.submitSignUpForm(result);
+    User
+      .signup(result)
+      .then((status) => {
+        if (status === 201) {
+          User
+            .login(formData)
+            .then((user) => {
+              dispatch(UserActions.login(user));
+              Service.redirect('/signup/success');
+            });
+        } else {
+          dispatch(UserActions.setErrors(['Что то пошло не так, попробуйте перезагрузить страницу']))
+        }
+      })
+      .catch((errors) => dispatch(UserActions.setErrors(errors)));
   };
 
   render() {
-    const { formError } = this.props;
+    const { errors } = this.props;
     const { isLoading, password } = this.state;
     const className = 'auth-form';
 
@@ -97,13 +112,13 @@ class SignupForm extends Component {
               <Form onValidSubmit={this.onSubmit} ref="form" method="post">
                 <h4 className="text-center">{SignupForm.messages.title}</h4>
                 {
-                  (formError && typeof(formError) === "object")
-                    ? formError.map((error, key) => (<Notify key={key} type="error">{error}</Notify>))
+                  (errors && typeof(errors) === "object")
+                    ? errors.map((error, key) => (<Notify key={key} type="error">{error}</Notify>))
                     : null
                 }
                 {
-                  (formError && typeof(formError) === "string")
-                    ? <Notify type="error">{formError}</Notify>
+                  (errors && typeof(errors) === "string")
+                    ? <Notify type="error">{errors}</Notify>
                     : null
                 }
                 <div className="row">
@@ -175,4 +190,11 @@ class SignupForm extends Component {
   }
 }
 
-export default SignupForm;
+
+const mapStateToProps = (({ user }) => {
+  return { ...user };
+});
+
+
+export default connect(mapStateToProps, null)(SignupForm);
+

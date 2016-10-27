@@ -8,7 +8,7 @@ export default {
   /**
    * @var string {apiHost} basic API host
    */
-  apiHost: 'https://la1fxggyfj.execute-api.us-east-1.amazonaws.com/prod/',
+  apiHost: 'http://40.68.243.107:8040/',
 
   /**
    * @var boolean {storage}

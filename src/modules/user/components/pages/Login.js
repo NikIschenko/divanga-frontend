@@ -1,9 +1,10 @@
 import React, { PropTypes } from 'react';
-import Header from '../../../app/components/elements/Header';
-import LoginForm from '../../containers/forms/LoginForm';
+import LoginForm from '../forms/LoginForm';
 import '../../media/styles/index.scss';
+import { connect } from 'react-redux';
+import UserActions from '../../actions/user';
 
-class Login extends React.Component {
+export class Login extends React.Component {
 
   static propTypes = {
     params: PropTypes.object,
@@ -18,4 +19,19 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+
+
+function mapStateToProps({ user }) {
+  return { ...user };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    logout: () => {
+      dispatch(UserActions.logout());;
+    },
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
+

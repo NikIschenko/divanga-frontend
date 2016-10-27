@@ -1,14 +1,16 @@
 import React, { PropTypes, Component } from 'react';
-import { Link }   from 'react-router';
-import { Form }   from 'formsy-react';
-import classNames from 'classnames';
-import ModalMini  from '../common/ModalMini';
-import Service    from '../../../../system/Service';
-import Notify     from '../../../app/components/elements/Notify';
-import Input      from '../../../app/components/elements/Input';
-import logoImage  from '../../../app/media/images/divanga.png';
+import { Link }    from 'react-router';
+import { connect } from 'react-redux';
+import { Form }    from 'formsy-react';
+import classNames  from 'classnames';
+import ModalMini   from '../common/ModalMini';
+import Service     from '../../../../system/Service';
+import Notify      from '../../../app/components/elements/Notify';
+import Input       from '../../../app/components/elements/Input';
+import logoImage   from '../../../app/media/images/divanga.png';
+import UserActions from '../../actions/user';
 
-class LoginForm extends Component {
+export class LoginForm extends Component {
 
   static defaultProps = {
     title: "Авторизация",
@@ -57,7 +59,7 @@ class LoginForm extends Component {
       <div className="container-fluid">
         {
           (isLoading)
-            ? <ModalMini>{Login.messages.loading}</ModalMini>
+            ? <ModalMini>{LoginForm.messages.loading}</ModalMini>
             : null
         }
         <div className="row flex-items-xs-center">
@@ -91,4 +93,18 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm
+const mapStateToProps = ({ user }) => ({ user });
+
+const mapDispatchToProps = (dispatch) => ({
+  init: () => {
+    dispatch(UserActions.init());
+  },
+  submitLoginForm: (data) => {
+    User
+      .login(data)
+      .then((user) => dispatch(UserActions.login(user)));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
+

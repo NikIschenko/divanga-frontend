@@ -5,14 +5,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-
-    case "INIT":
-    {
-      const result = {
-        errors: [],
-      };
-      return { ...state, ...result };
-    }
+    
     case "LOGIN":
     case "SIGNUP":
     {
@@ -27,6 +20,10 @@ export default (state = initialState, action) => {
     case "LOGOUT":
     {
       return { ...state, current: null };
+    }
+    case "SET_ERRORS":
+    {
+      return { ...state, errors: action.errors };
     }
     default:
     {

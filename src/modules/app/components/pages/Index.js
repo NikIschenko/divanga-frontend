@@ -19,7 +19,7 @@ export default class Index extends React.Component {
 
   componentWillMount() {
     const {dispatch} = this.props;
-    Api.fetchJSON('api/events/confirmed', {
+    Api.fetchJSON('http://40.68.243.107:8040/api/events/confirmed', {
       page: 1,
       size: 20,
     }).then((response) => {

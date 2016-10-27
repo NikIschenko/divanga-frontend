@@ -5,11 +5,15 @@ export default [
   },
   {
     path: '/logout',
-    component: './modules/user/containers/pages/Logout',
+    component: './modules/user/components/pages/Logout',
   },
   {
     path: '/signup',
     component: './modules/user/components/pages/Signup',
+  },
+  {
+    path: '/signup/success',
+    component: './modules/user/components/pages/Success',
   },
   {
     path: '/personal',

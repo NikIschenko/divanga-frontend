@@ -2,7 +2,8 @@
 
 .login,
 .signup,
-.simple-form-page {
+.simple-form-page,
+.signup-success {
   min-height: 100vh;
   padding: 10% 0 0 0;
 
@@ -106,5 +107,34 @@
         background: #2564a6;
       }
     }
+  }
+}
+
+.signup-success {
+
+  .block-content {
+    padding: 2.5rem 1.25rem;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  }
+
+  .link {
+    color: $color-primary;
+  }
+}
+
+.not-found {
+  h1 {
+    font-size: 225px;
+    font-weight: 800;
+    color: #dedede;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .sub-text {
+    color: #3c3c3c;
+    font-weight: 800;
+    font-size: 32px;
+    text-align: center;
+    text-transform: uppercase;
   }
 }

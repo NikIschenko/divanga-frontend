@@ -17,7 +17,7 @@ export default class User {
   static signup(profile) {
     return new Promise((resolve, reject) => {
       Api
-        .sendPost('api/users', profile)
+        .post('http://40.68.243.107:8040/api/register', profile)
         .then(resolve)
         .catch(reject);
     });

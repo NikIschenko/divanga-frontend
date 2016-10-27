@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../../app/components/elements/Header';
 import OneColumn from '../../../app/components/layout/OneColumn';
-import SignupForm from '../../containers/forms/SignupForm';
+import SignupForm from '../forms/SignupForm';
 
 export default  class Personal extends React.Component {
 

@@ -1,23 +1,43 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-import OneColumn from '../layout/OneColumn';
-import '../../media/styles/index.scss';
+import React     from 'react';
+import { Link }  from 'react-router';
+import logoImage from '../../../app/media/images/divanga.png';
 
-export default class Page404 extends Component {
+class Page404 extends React.Component {
+
+  static messages = {
+    title:    'Уфф! Вот это поворот!',
+    text:     'К сожалению даже Диванга не смогла найти, то что ван нужно. И знаете почему? Потому что то, что вы ищите не существует...',
+  }
 
   render() {
     return (
-      <OneColumn>
-        <div className="page-404">
-          <main className="row column">
-            <h1 className="text-center">404</h1>
-            <h2 className="text-center">The page you were looking for doesn't exist.</h2>
-            <h2 className="text-center">You might try going <a href="javascript:history.go(-1)">back</a> or <Link to="/">home</Link>.</h2>
-          </main>
-        </div>
-      </OneColumn>
+      <div className="not-found">
+        <div className="container-fluid">
+          <div className="row flex-items-xs-center">
+            <Link to="/" className="logo">
+              <img src={logoImage} alt="logo"/>
+            </Link>
+          </div>
+          <div className="flex-items-xs-center text-sm-center row">
+            <div className="col-md-7 col-lg-5">
+              <h1>404</h1>
+              <p className="sub-text">{Page404.messages.title}</p>
+              <p>
+                {Page404.messages.text} <Link to="/profile" className="link">{Page404.messages.linkText}</Link>
+              </p>
 
+              <div className="text-sm-center">
+                <br/>
+                <br/>
+                <Link to="/" className="btn btn-primary">Вернуться на главную</Link>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }
 
+export default Page404;

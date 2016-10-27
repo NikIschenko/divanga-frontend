@@ -1,147 +1,183 @@
-import urlJoin from 'url-join';
-import config from '../modules/app/config/config';
+import queryString from 'query-string';
 import 'whatwg-fetch';
+
 
 export default class Api {
 
-  static authorization = '';
-  static host          = '';
+  static TOKEN_TYPE       = 'Bearer ';
+  static HTTP_METHODS     = ['GET', 'POST', 'PUT', 'DELETE'];
+  static RESPONSE_TIMEOUT = 30000;
 
-  static TOKEN_TYPE = 'Bearer ';
-  static HTTP_METHOD = {
-    POST: 'POST',
-    GET: 'GET',
-    PUT: 'PUT',
-    DELETE: 'DELETE',
+  static headers  = {
+    'Accept':       'application/json, text/plain, */*',
+    'Content-Type': 'application/json;charset=UTF-8',
+  };
+  static messages = {
+    responseTimeout: 'Response timeout expired',
   };
 
-  static setHost(host) {
-    Api.host = host;
-    return Api;
-  }
+  /**
+   * Fetched data from url
+   * @return {function}
+   * @param method
+   * @param url
+   * @param data
+   */
+  static fetchJSON(method = 'GET', url, data = null) {
 
-  static setToken(token, type) {
-    Api.authorization = type + token;
-    return Api;
-  }
-
-  static fetchJSON(method = Api.HTTP_METHOD.GET, url, data = null) {
-
-    const methods = Object.keys(Api.HTTP_METHOD);
-    if (methods.includes(method.toUpperCase()) === false) {
-      data = url;
-      url = method;
-      method = Api.HTTP_METHOD.GET;
+    if (Api.HTTP_METHODS.includes(method.toUpperCase()) === false) {
+      data   = url;
+      url    = method;
+      method = 'GET';
     }
 
-    url = this._prepareUrl(url);
-
-    if (method === Api.HTTP_METHOD.POST) {
-      return Api.post(url, data);
-    }
-
-    return fetch(url, {
-      method,
-      headers: Api._getHeaders(),
-    }).then(response => response.json());
+    return Api[method.toLowerCase()].call(this, url, data);
   }
 
-  static _getHeaders() {
-    const headers = {
-      'Accept': 'application/json, text/plain, */*',
-      'Content-Type': 'application/json;charset=UTF-8'
-    };
 
-    if (Api.authorization) {
-      headers['Authorization'] = this.authorization;
-    }
+  /**
+   * Short method GET
+   * @return {function} Promise
+   * @param url
+   * @param data
+   */
+  static get(url, data = {}) {
 
-    return headers;
+    return new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => reject(new Error(Api.messages.responseTimeout)), Api.RESPONSE_TIMEOUT);
+      fetch(Api._contactUrl(url, data),
+        {
+          method: 'GET',
+          headers: Api.getHeaders(),
+        })
+        .then((response) => {
+          clearTimeout(timeout);
+          resolve(response.json());
+        })
+        .catch(reject);
+    });
   }
 
-  static _prepareUrl(url) {
-    return 'http://40.68.243.107:8040/' + url;
+  /**
+   * Short method POST
+   * @return {function} Promise
+   * @param url
+   * @param data
+   */
+  static post(url, data) {
+    return new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => reject(new Error(Api.messages.responseTimeout)), Api.RESPONSE_TIMEOUT);
+      fetch(url,
+        {
+          method: 'POST',
+          headers: Api.getHeaders(),
+          body: JSON.stringify(data),
+        })
+        .then((response) => {
+          clearTimeout(timeout);
+          resolve(response.status, response.json());
+        })
+        .catch(reject);
+    });
   }
 
+  /**
+   * Short method PUT
+   * @return {function} Promise
+   * @param url
+   * @param data
+   */
+  static put(url, data) {
+    return new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => reject(new Error(Api.messages.responseTimeout)), Api.RESPONSE_TIMEOUT);
+      fetch(url,
+        {
+          method: 'PUT',
+          headers: Api.getHeaders(),
+          body: Api._convertToFormData(data),
+        })
+        .then((response) => {
+          clearTimeout(timeout);
+          resolve(response.json());
+        })
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Short method Delete
+   * @return {function} Promise
+   * @param url
+   * @param data
+   */
+  static delete(url, data) {
+    return new Promise((resolve, reject) => {
+      const timeout = setTimeout(() => reject(new Error(Api.messages.responseTimeout)), Api.RESPONSE_TIMEOUT);
+      fetch(Api._contactUrl(url, data),
+        {
+          method: 'DELETE',
+          headers: Api.getHeaders(),
+        })
+        .then((response) => {
+          clearTimeout(timeout);
+          resolve(response.json());
+        })
+        .catch(reject);
+    });
+  }
+
+  /**
+   * Transform object to form data values
+   * @return {object} FormData
+   * @param data
+   */
   static _convertToFormData(data) {
     const formData = new FormData();
     for (const name in data) {
       formData.append(name, data[name]);
     }
-    
+
     return formData;
   }
 
-  static post(url, data) {
-    return fetch(url, {
-      method: Api.HTTP_METHOD.POST,
-      headers: Api._getHeaders(),
-      body: Api._convertToFormData(data),
-    }).then(response => response.json());
+  /**
+   * Direct method that allow set Authorization token
+   * @return {object} Self class
+   * @param token
+   * @param type
+   */
+  static setToken(token, type = Api.TOKEN_TYPE) {
+    Api.setHeaders('Authorization', type.concat(token));
+    return Api;
   }
 
-  static put(url, data) {
-    return fetch(url, {
-      method: Api.HTTP_METHOD.PUT,
-      headers: Api._getHeaders(),
-      body: Api._convertToFormData(data),
-    }).then(response => response.json());
+  /**
+   * Set header row
+   * @return {object} Self class
+   * @param name
+   * @param value
+   */
+  static setHeaders(name, value) {
+    Api.headers[name] = value;
+    return Api;
   }
 
-
-  static sendPost(url, data) {
-
-    var json = JSON.stringify(data);
-    return fetch(this._prepareUrl(url), {
-      method: 'post',
-      headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json;charset=UTF-8'
-      },
-      body: json,
-    }).then((response) => response.json());
+  /**
+   * Get headers
+   * @return {object}
+   */
+  static getHeaders() {
+    return Api.headers;
   }
 
-
-
-  // -------------------------------------------------------------------------------------------------------------------
-  static getJSON(url, flag = true) {
-    return (
-
-      fetch( (flag) ? urlJoin([config.apiHost, url]) : url, {
-        headers: {
-        /*  'Authorization': '578d01ab349c3003090000050c4315ce3d7e4676676d90eb97841b98',*/
-        },
-      })
-      .then(response => response.json())
-    );
+  /**
+   * Merged url with parameters
+   * @return {string}
+   */
+  static _contactUrl(url, data) {
+    if (Object.keys(data).length === 0) return url;
+    return (url.indexOf('?') >= 0)
+      ? url + '&' + queryString.stringify(data)
+      : url + '?' + queryString.stringify(data);
   }
-
-  static sendPOST(url, params) {
-
-    const body = _(params)
-      .toPairs()
-      .filter(pair => pair[1] !== null)
-      .map(pair => {
-        if (_.isArray(pair[1])) {
-          pair[1] = JSON.stringify(pair[1]);
-        }
-        return pair.join('=');
-      })
-      .value()
-      .join('&');
-
-
-    return (
-      fetch(urlJoin([config.apiHostOld, url]), {
-        method: 'post',
-        body,
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      })
-      .then(response => response.json())
-    );
-  }
-
 }

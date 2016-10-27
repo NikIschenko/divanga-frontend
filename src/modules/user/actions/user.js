@@ -1,41 +1,4 @@
-import Api from '../../../system/Api';
-import Service from '../../../system/Service';
-import User from '../service/User';
-
-export const login = (dispatch, profile) => {
-
-  User
-    .login(profile)
-    .then((response) => {
-      dispatch(UserActions.login(response));
-    })
-    .catch((error) => {
-      console.log(error); // TODO: Set from error;
-    });
-};
-
-export const signUp = (dispatch, profile) => {
-
-  dispatch(UserActions.init());
-
-  User
-    .signup(profile)
-    .then((response) => {
-      console.log('test');
-      console.log(response);
-
-      //dispatch()
-    });
-
-};
-
 export default class UserActions {
-
-  static init() {
-    return {
-      type: 'INIT',
-    };
-  }
 
   static signup(response) {
     return {
@@ -51,10 +14,10 @@ export default class UserActions {
     };
   }
 
-  static fillPassword(params) {
+  static setErrors(errors) {
     return {
-      type: 'FILL_PASSWORD',
-      params,
+      type: 'SET_ERRORS',
+      errors,
     };
   }
 

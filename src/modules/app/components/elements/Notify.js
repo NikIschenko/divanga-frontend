@@ -9,10 +9,7 @@ export default class Notify extends Component {
 
     return (
       <div className={classes}>
-        <div className="row collapse">
-          <div className="column shrink"><i className={`hbc-${type}`}></i></div>
-          <div className="column">{children}</div>
-        </div>
+        {children}
       </div>
     );
   }
