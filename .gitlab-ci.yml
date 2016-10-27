@@ -1,4 +1,4 @@
-image: bitnami-nodejs-6.9.1-0-r27-linux-ubuntu-14.04-x86_64
+image: ~/bitnami-nodejs-6.9.1-0-r27-linux-ubuntu-14.04-x86_64/bitnami-nodejs-6.9.1-0-r27-linux-ubuntu-14.04-x86_64.vmx
 
 cache:
   untracked: true
