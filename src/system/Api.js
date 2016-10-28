@@ -75,7 +75,7 @@ export default class Api {
         })
         .then((response) => {
           clearTimeout(timeout);
-          resolve(response.status, response.json());
+          resolve(response.json());
         })
         .catch(reject);
     });

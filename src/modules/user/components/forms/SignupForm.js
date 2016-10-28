@@ -73,17 +73,16 @@ export class SignupForm extends Component {
     this.setState({ isLoading: true });
     User
       .signup(result)
-      .then((status) => {
-        if (status === 201) {
-          User
-            .login(formData)
-            .then((user) => {
-              dispatch(UserActions.login(user));
-              Service.redirect('/signup/success');
-            });
-        } else {
-          dispatch(UserActions.setErrors(['Что то пошло не так, попробуйте перезагрузить страницу']))
-        }
+      .then(() => {
+        console.log('test im here');
+        User
+          .login(formData)
+          .then((user) => {
+            dispatch(UserActions.login(user));
+            Service.redirect('/signup/success');
+          });
+
+        // dispatch(UserActions.setErrors(['Что то пошло не так, попробуйте перезагрузить страницу']))
       })
       .catch((errors) => dispatch(UserActions.setErrors(errors)));
   };
@@ -98,7 +97,7 @@ export class SignupForm extends Component {
       <div className="container-fluid">
         {
           (isLoading)
-            ? <ModalMini>{SignupForm.message.loading}</ModalMini>
+            ? <ModalMini>{SignupForm.messages.loading}</ModalMini>
             : null
         }
         <div className="row flex-items-xs-center">
@@ -112,7 +111,7 @@ export class SignupForm extends Component {
               <Form onValidSubmit={this.onSubmit} ref="form" method="post">
                 <h4 className="text-center">{SignupForm.messages.title}</h4>
                 {
-                  (errors && typeof(errors) === "object")
+                  (!_.isEmpty(errors) && typeof(errors) === "object")
                     ? errors.map((error, key) => (<Notify key={key} type="error">{error}</Notify>))
                     : null
                 }

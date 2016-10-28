@@ -9,6 +9,7 @@ import Notify      from '../../../app/components/elements/Notify';
 import Input       from '../../../app/components/elements/Input';
 import logoImage   from '../../../app/media/images/divanga.png';
 import UserActions from '../../actions/user';
+import User        from '../../service/User';
 
 export class LoginForm extends Component {
 
@@ -97,7 +98,7 @@ const mapStateToProps = ({ user }) => ({ user });
 
 const mapDispatchToProps = (dispatch) => ({
   init: () => {
-    dispatch(UserActions.init());
+    dispatch(UserActions.setErrors([]));
   },
   submitLoginForm: (data) => {
     User

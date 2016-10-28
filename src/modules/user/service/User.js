@@ -1,11 +1,12 @@
-import Api from '../../../system/Api';
+import Api    from '../../../system/Api';
+import Config from '../../app/config/config';
 
 export default class User {
 
   static login(profile) {
     return new Promise((resolve, reject) => {
       Api
-        .sendPost('api/authenticate', profile)
+        .post(Config.apiHost + 'api/authenticate', profile)
         .then((response) => {
           (response.id_token)
             ? resolve(User.getProfile(response.id_token, profile.username))
@@ -17,7 +18,7 @@ export default class User {
   static signup(profile) {
     return new Promise((resolve, reject) => {
       Api
-        .post('http://40.68.243.107:8040/api/register', profile)
+        .post(Config.apiHost + 'api/register', profile)
         .then(resolve)
         .catch(reject);
     });
@@ -26,8 +27,8 @@ export default class User {
   static getProfile(token, login) {
     return new Promise((resolve, reject) => {
       Api
-        .setToken(token, Api.TOKEN_TYPE)
-        .fetchJSON('api/users/' + login)
+        .setToken(token)
+        .fetchJSON(Config.apiHost + 'api/users/' + login)
         .then((response) => {
           response.token = token;
           resolve(response);

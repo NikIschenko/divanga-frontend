@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-import { Link }   from 'react-router';
-import User       from '../../../user/service/User';
-import AppActions from '../../actions/app';
-import Service    from '../../../../system/Service';
-import logoImage  from '../../media/images/divanga.png';
-import SearchBar  from '../../../search/components/elements/SearchBar';
+import { Link }    from 'react-router';
+import Service     from '../../../../system/Service';
+import logoImage   from '../../media/images/divanga.png';
+import SearchBar   from '../../../search/components/elements/SearchBar';
+import { UserNav } from '../../../user';
 
 export default class Header extends Component {
 
@@ -47,15 +46,7 @@ export default class Header extends Component {
               {
                 ((user) => {
                   if (user) {
-                    return (
-                      <div className="user-profile">
-                        <Link to="/">
-                          <i className="avatar"></i>
-                          {user.login}
-                        </Link>
-                        <span className="nav hidden-md-up" onClick={() => dispatch(AppActions.toggleSidebar('open'))}><i className="hbc-menu"></i></span>
-                      </div>
-                    );
+                    return <UserNav user={user} />
                   }
 
                   return (
