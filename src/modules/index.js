@@ -2,6 +2,6 @@ export default [
   'App',
   'User',
   'Search',
-  'Test',
+  'Comment',
   'Event',
 ];

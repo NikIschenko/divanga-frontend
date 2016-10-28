@@ -12,6 +12,7 @@ import EventActions from '../../../event/actions/event';
 import { Spinner } from '../../../app';
 import { EventService } from '../../../event';
 import { Questions } from '../../../questions'
+import { Comments, CommentForm } from '../../../comment'
 
 
 export default class Detail extends React.Component {
@@ -46,10 +47,12 @@ export default class Detail extends React.Component {
          <Event event={detailEvent} full={true} />
          <div className="tags-block">
            {
-             tags.map((tag, key) => <Link className="tag-link" to={`/tag/${tag.id}`} key={key} >{tag.title}</Link>)
+             tags.map((tag, key) => <Link className="tag-link" to={`/tag/${tag.id}`} key={key} >#{tag.title}</Link>)
            }
          </div>
           <Questions questions={questions} />
+          <Comments eventId={detailEvent.id} />
+          <CommentForm />
         </TwoColumn>
       </div>
     );

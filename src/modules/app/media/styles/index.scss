@@ -33,6 +33,7 @@
 
 .questions {
   padding: 0;
+  margin-bottom: 15px;
   background: #FFF;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 
@@ -42,6 +43,12 @@
     padding: 15px 25px;
     display: block;
     border-bottom: 1px solid #EEE;
+  }
+
+  .timeline:after {
+    content: '';
+    display: block;
+    clear: both;
   }
 
   .timeline-bar {
@@ -95,7 +102,7 @@
   }
 
   .question-block {
-    margin: 25px;
+    padding: 25px;
     .title {
       font-weight: bold;
       display: block;

@@ -13,6 +13,17 @@
   margin: 15px 0 0 0;
   border-radius: 99px;
   overflow: hidden;
+  position: relative;
+  z-index: 15;
+  transition: all .15s ease;
+
+  &:hover {
+    background: #44a8cb;
+
+    img {
+      width: 110%;
+    }
+  }
 
   img {
     width: 100%;

@@ -29,7 +29,7 @@ class Page404 extends React.Component {
               <div className="text-sm-center">
                 <br/>
                 <br/>
-                <Link to="/" className="btn btn-primary">Вернуться на главную</Link>
+                <Link to="/" className="btn btn-primary">Создать свою новость</Link>
               </div>
 
             </div>
