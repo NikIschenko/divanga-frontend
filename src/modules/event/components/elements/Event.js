@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import {Link} from 'react-router';
-
+moment.locale('ru');
 
 export class Event extends React.Component {
 

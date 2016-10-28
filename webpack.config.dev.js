@@ -24,6 +24,7 @@ var config = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ru/),
   ],
   module: {
     loaders: [

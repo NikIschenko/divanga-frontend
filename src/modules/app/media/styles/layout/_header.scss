@@ -21,11 +21,12 @@
     background: #44a8cb;
 
     img {
-      width: 110%;
+      transform: scale(1.05, 1.05);
     }
   }
 
   img {
+    transition: transform .15s ease;
     width: 100%;
     padding: 5px;
   }

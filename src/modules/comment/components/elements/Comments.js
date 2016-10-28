@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CommentService from '../../service/CommentService';
 import CommentActions from '../../actions/comment';
+import moment from 'moment';
 
 export class Comments extends React.Component  {
 
@@ -36,7 +37,10 @@ export class Comments extends React.Component  {
                     </div>
                     <div className="columns text">
                       <dl>
-                        <dt>{comment.userLogin}, <span className="date">{comment.commentDate}</span></dt>
+                        <dt>{comment.userLogin}, <span className="date">
+                           {moment(comment.commentDate).startOf('hour').fromNow()}
+                          , в {moment(comment.commentDate).format('H:MM')}
+                        </span></dt>
                         <dd>{comment.text}</dd>
                       </dl>
                     </div>
