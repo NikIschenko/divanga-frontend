@@ -19,7 +19,7 @@ class Menu extends Component {
               <li key={key} className="sub-menu-link">
                 <Link
                   activeClassName="active"
-                  to={item.path}>
+                  to={item.path || `/tag/${item.id}`}>
                   {item.title}
                 </Link>
               </li>
@@ -42,7 +42,7 @@ class Menu extends Component {
               <li key={key} className="menu-link">
                 <Link
                   activeClassName="active"
-                  to={item.path}>
+                  to={item.path || `/tag/${item.id}`}>
                   {item.title}
                   {
                     (item.children)

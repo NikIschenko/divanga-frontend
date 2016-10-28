@@ -8,6 +8,7 @@ export class Event extends React.Component {
   static defaultProps = {
     route: false,
     actions: true,
+    full: false,
   }
 
   renderTitle() {
@@ -19,7 +20,7 @@ export class Event extends React.Component {
   }
 
   render() {
-    const {event, route, actions} = this.props;
+    const {event, route, actions, full} = this.props;
 
 
     return (
@@ -29,6 +30,12 @@ export class Event extends React.Component {
             {this.renderTitle()}
           </div>
           <div className="text" dangerouslySetInnerHTML={{__html: event.previewText}}></div>
+          <br/>
+          {
+            (full)
+              ? <div dangerouslySetInnerHTML={{__html: event.remainingText}} className="text"></div>
+              : null
+          }
         </div>
         <div className="card-footer row ">
 

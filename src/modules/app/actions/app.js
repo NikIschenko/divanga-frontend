@@ -7,6 +7,13 @@ export default class AppActions {
     }
   }
 
+  static setPopularTags(tags) {
+    return {
+      type: 'SET_POPULAR_TAGS',
+      tags,
+    }
+  }
+
   static popupShow(data) {
     return {
       type: 'POPUP_SHOW',

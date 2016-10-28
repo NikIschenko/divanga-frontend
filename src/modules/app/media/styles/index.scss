@@ -5,3 +5,29 @@
 @import "layout/index";
 @import "elements/index";
 @import "pages/index";
+
+.tags-block {
+
+  margin: -25px 0 25px 0;
+
+  .tag-link {
+    display: inline-block;
+    background: #EEE;
+    color: #777;
+    padding: 7px 25px;
+    line-height: 1;
+    font-size: 11px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-right: 15px;
+
+
+    &:hover {
+      color: #FFF;
+      background: #2675c1;
+    }
+  }
+}
+
