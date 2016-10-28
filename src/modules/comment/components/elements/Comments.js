@@ -18,7 +18,7 @@ export class Comments extends React.Component  {
   render() {
 
     const { comment } = this.props;
-    const userAvatar = 'https://divangaimages.blob.core.windows.net/avatars/dintel.png';
+    const userAvatar = 'https://divangaimages.blob.core.windows.net/avatars/dintel.png'; // TODO replace "dintel" to "%login"
 
     return(
       <div className="block comments">
@@ -28,7 +28,6 @@ export class Comments extends React.Component  {
         <div className="block-content">
           {
             (comment.list.map((comment, key) => {
-
               return (
                 <div key={key} className="comment">
                   <div className="row">
