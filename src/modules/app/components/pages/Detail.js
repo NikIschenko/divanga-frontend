@@ -9,16 +9,12 @@ import RadioList from '../elements/RadioList';
 import Api from '../../../../system/Api';
 import {Event} from '../../../event/components/elements/Event';
 import EventActions from '../../../event/actions/event';
+import { Spinner } from '../../../app';
 import { EventService } from '../../../event';
+import { Questions } from '../../../questions'
 
 
 export default class Detail extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {currentRadioListCheck: 1, toggleOn: 1}
-  };
 
   componentWillMount() {
     const { dispatch, params } = this.props;
@@ -26,26 +22,15 @@ export default class Detail extends React.Component {
     EventService
       .getDetailInfo(params.id)
       .then((response) => {
-        console.log(response);
         dispatch(EventActions.setDetail(response))
       });
   }
 
-  checkRadioList = (value) => {
-    this.setState({currentRadioListCheck: value});
-  };
-
   render() {
 
     const { detailEvent } = this.props.event;
-    var predictionList = [];
-
-    // questions.answers.map((prediction, index) => {
-    //   predictionList.push({
-    //     label: prediction.title,
-    //     value: prediction.id
-    //   });
-    // });
+    const tags = detailEvent.tags || [];
+    const questions = detailEvent.questions || [];
 
     console.log(detailEvent);
 
@@ -53,12 +38,18 @@ export default class Detail extends React.Component {
       <div className="detail-page">
         <Header />
         <TwoColumn>
+          {
+            (!detailEvent)
+              ? <Spinner />
+              : null
+          }
          <Event event={detailEvent} full={true} />
          <div className="tags-block">
            {
-             detailEvent.tags.map((tag, key) => <Link className="tag-link" to={`/tag/${tag.id}`} key={key} >{tag.title}</Link>)
+             tags.map((tag, key) => <Link className="tag-link" to={`/tag/${tag.id}`} key={key} >{tag.title}</Link>)
            }
          </div>
+          <Questions questions={questions} />
         </TwoColumn>
       </div>
     );

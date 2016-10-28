@@ -64,11 +64,11 @@ export class Event extends React.Component {
                 <div className="like-dislike">
                   <span>
                     <i className="icon-like icons"></i>
-                    {event.votes.dislikesCount}
+                    {event.votes.likesCount}
                   </span>
                   <span>
                     <i className="icon-dislike icons"></i>
-                    {event.votes.likesCount}
+                    {event.votes.dislikesCount}
                   </span>
                 </div>
               </li>
